@@ -12,8 +12,8 @@ def kcmApi(request, date):
 	kcmObject = KCM('model')
 	keyword = request.GET['keyword']
 	filePath = kcmObject.getFilePath('cht')
-	print(filePath)
 	kcmObject.setMissionType('json')
-	result = kcmObject.getOrCreate(keyword, kcmObject.return_top_n_cor_terms, kcmObject.get_cor_term_freq_pq(filePath, keyword, 10), 10)
+	pq = kcmObject.get_cor_term_freq_pq(filePath, keyword, 1)
+	result = kcmObject.getOrCreate(keyword, kcmObject.return_top_n_cor_terms, pq, 10)
 
 	return JsonResponse(result, safe=False)
