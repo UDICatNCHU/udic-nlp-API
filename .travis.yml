@@ -1,0 +1,13 @@
+language: python
+# if command bellow need to executed in sudo
+# add this line.
+# sudo: required
+python:
+  - 3.2
+  - 3.3 
+  - 3.4
+  - 3.5
+install:
+  - make install
+script:
+  - make test
