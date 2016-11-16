@@ -1,15 +1,15 @@
 from django.http import JsonResponse
-from djangoApiDec.djangoApiDec import queryString_required, date_proc
+from djangoApiDec.djangoApiDec import queryString_required
 from KCM.KCM import KCM
+import os
 
-@date_proc
 @queryString_required(['keyword'])
-def kcmApi(request, date):
+def kcmApi(request):
 	"""Generate list of term data source files
 	Returns:
 		if contains invalid queryString key, it will raise exception.
 	"""
-	kcmObject = KCM('model')
+	kcmObject = KCM('model', 'KCM/')
 	keyword = request.GET['keyword']
 	filePath = kcmObject.getFilePath('cht')
 	kcmObject.setMissionType('json')
