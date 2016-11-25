@@ -21,4 +21,4 @@ RUN make install
 EXPOSE 8000
 
 # 建立新容器時要執行的指令
-CMD [python3", "manage.py", "runserver"]
+CMD ["python3", "manage.py", "runserver"]
