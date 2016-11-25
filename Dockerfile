@@ -13,8 +13,8 @@ MAINTAINER davidtnfsh davidtnfsh@gmail.com
 RUN apt-get update && \
       apt-get -y install sudo git build-essential python3 python3 python3-pip 
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
-RUN git clone https://github.com/UDICatNCHU/KCM.git
-WORKDIR KCM
+RUN git clone https://github.com/UDICatNCHU/KCM_web_api.git
+WORKDIR KCM_web_api
 RUN make install
 
 # the port on which we will be running app server (django runserver / gunicorn)
