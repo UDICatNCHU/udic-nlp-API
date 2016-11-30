@@ -1,10 +1,32 @@
-# PTT_KCM_API (使用KCM當作PTT文章查詢索引的API)[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
+# KCM_web_api[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
-使用 **jwline** 實作的[PTT爬蟲](https://github.com/jwlin/ptt-web-crawler)
+網頁版的KCM api，可以直接呼叫網址得到結果，並且會cache查詢過的結果  
+KCM API of web version, you can call the url directly and will cache the result in server.
 
-實作初一個可以用get協定去查詢的API，若關鍵字不存在
 
-則使用KCM找出最相關的字去做查詢
+### API usage and Results
+
+API使用方式（下面所寫的是api的URL pattern）  
+(Usage of API (pattern written below is URL pattern))：
+
+1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?issue={主題名稱}`
+  * 查詢網址 (query url)：http://140.120.13.243:32777/api/kcmApi/?keyword=
+  * 範例 (Example)：`http://140.120.13.243:32777/api/kcmApi/?keyword=中興大學`
+  * result：
+  ```
+  {
+    "大學": 164,
+    "名": 93,
+    "於": 88,
+    "後": 86,
+    "教授": 81,
+    "臺灣": 72,
+    "畢業": 66,
+    "學生": 55,
+    "法商學院": 55,
+    "農學院": 50
+  }
+  ```
 
 ## Getting Started
 
@@ -20,102 +42,48 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-```
-git clone https://github.com/UDICatNCHU/PTT_KCM_API.git
-make install
-```
+There are two choice：
+
+* Install By Git：
+  1. 下載 (Download this project)：`git clone https://github.com/UDICatNCHU/KCM_web_api.git`
+  2. 使用虛擬環境 (Use virtualenv is recommended)：
+    1. 建立虛擬環境，取名叫作venv：`virtualenv venv`
+    2. 啟動方法 (How to activate virtualenv)
+      1. for Linux：`. venv/bin/activate`
+      2. for Windows：`venv\Scripts\activate`
+  3. 安裝 (Install)：`make install`
+* Install By Docker：
+  1. 此指令必須在有Dockerfile的目錄下執行 (You can only run this command in directory which has Dockerfile)：`sudo docker build -t kcm .`
 
 
 ## Running & Testing
 
 ## Run
 
+Still has two choice to Run， it depends on which installed method you used：
 
-1. 初次啟動需要先爬PTT資料：`make firstRunCrawler`
-2. 啟動django專案：`./manage.py runserver`
-3. 開啟瀏覽器，輸入： `http://127.0.0.1:8000/PTT_KCM_API/build_IpTable/`
-  * 建立Ptt用戶與發文的IP對照表
-4. 開啟瀏覽器，檢查一下API是否正常產出json資料
+* By Git：
+  1. 先建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={} &`
+  2. 啟動django伺服器(Open django Server)：`./manage.py runserver`
+  3. 開啟瀏覽器，檢查一下API是否正常產出json資料(Open your browser and test whether it works or not.)
+* By Docker：
+  1. 在背景執行container並且與host的port打通 ()：`sudo docker run -d -P --name={container name} kcm`
+  2. 進入docker container建立KCM model(Enter docker container for building KCM model)：`sudo docker exec -it {container name} bash`
+  3. 建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={} &`
+  4. 退出container之後，開啟瀏覽器，檢查一下API是否正常產出json資料(Leave container and test whether it works or not.)
+
 
 ### Break down into end to end tests
 
-
-1. 執行全部的測試：`make test`
-2. 分別測試：
-  * 測試ptt爬蟲：`cd ptt-web-crawler; python test.py`
-  * 測試PTT_KCM_API：**尚無**
-
 ### And coding style tests
 
-目前沒有coding style tests...
-
-### API usage and Results
-
-API使用方式（下面所寫的是api的URL pattern）：
-
-1. 取得特定主題的PTT文章： `PTT_KCM_API/api/articles/?issue={主題名稱}`
-  * 範例：`PTT_KCM_API/api/articles/?issue=光復節`
-  * reeulst：
-    ```
-    [
-      {
-        "article_id": "M.1477366093.A.CF0",
-        "article_title": "[討論] 今天是台灣光復節&古寧頭戰役紀念日",
-        "author": "McCain (長髮馬尾控)",
-        "board": "HatePolitics",
-        "content": "今天是台灣光復節 各位有放假嗎?...",
-        "date": "Tue Oct 25 11:28:08 2016",
-        "ip": "114.45.182.54",
-        "message_conut": {
-          "all": 10,
-          "boo": 0,
-          "count": 5,
-          "neutral": 5,
-          "push": 5
-        },
-        "messages": [
-          {
-            "push_content": "光復節? 這個詞其實蠻多爭議的",
-            "push_ipdatetime": "10/25 11:33",
-            "push_tag": "→",
-            "push_userid": "Antler5566"
-          },
-          ...
-        ]
-      },
-    ```
-
-2. 取得特定主題文章的參與者他們的IP與對議題的支持程度：`PTT_KCM_API/api/ip/?issue={主題名稱}`
-  * 範例：`/PTT_KCM_API/api/ip/?issue=光復節`
-  * result：
-    ```
-    {
-      "issue": "光復節",
-      "author": [
-        {
-          "date": "Tue Oct 25 11:28:08 2016",
-          "author": "McCain (長髮馬尾控)",
-          "ip": "114.45.182.54",
-          "score": -1
-        },
-        ...
-      ]
-      "attendee": [
-        {
-          "push_userid": "Antler5566",
-          "score": 1,
-          "ip": "140.120.4.13",
-          "push_ipdatetime": "10/25 11:33"
-        }
-        ...
-      ],
-    }
-    ```
+目前沒有coding style tests...  
+There's no coding style tests yet.
 
 ## Deployment
 
-
-目前只是一般的 **django** 程式，使用gunicorn或者uwsgi佈署即可
+目前只是一般的 **django** 程式，使用gunicorn或者uwsgi佈署即可  
+It's just a normal django project, use gunicorn or uwsgi can deploy.
 
 ## Built With
 
@@ -132,8 +100,8 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## License
 
-This project is licensed under the **GNU 3.0** License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the **MIT** License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* 感謝 **jwline** 實作的[PTT爬蟲](https://github.com/jwlin/ptt-web-crawler)
+感謝KCM的所有作者 Thanks all Contributors of KCM

@@ -13,7 +13,7 @@ ENV LANG=C.UTF-8
 
 # 更新映像檔的指令
 RUN apt-get update && \
-      apt-get -y install sudo git build-essential python3 python3 python3-pip wget
+      apt-get -y install sudo git build-essential python3 python python3-pip wget
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN git clone https://github.com/UDICatNCHU/KCM_web_api.git
 WORKDIR KCM_web_api
