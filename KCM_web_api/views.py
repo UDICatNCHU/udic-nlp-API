@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.http import JsonResponse
 from djangoApiDec.djangoApiDec import queryString_required
 from KCM.KCM import KCM

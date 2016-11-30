@@ -9,16 +9,19 @@ FROM ubuntu:16.04
 # 維護者： docker_user <docker_user at email.com> (@docker_user)
 MAINTAINER davidtnfsh davidtnfsh@gmail.com
 
+ENV LANG=C.UTF-8
+
 # 更新映像檔的指令
 RUN apt-get update && \
-      apt-get -y install sudo git build-essential python3 python3 python3-pip 
+      apt-get -y install sudo git build-essential python3 python3 python3-pip wget
 RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN git clone https://github.com/UDICatNCHU/KCM_web_api.git
 WORKDIR KCM_web_api
 RUN make install
+RUN ln -s /usr/bin/python3.5 /usr/bin/python
 
 # the port on which we will be running app server (django runserver / gunicorn)
 EXPOSE 8000
 
 # 建立新容器時要執行的指令
-CMD ["python3", "manage.py", "runserver"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

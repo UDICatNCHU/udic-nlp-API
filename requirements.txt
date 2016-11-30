@@ -2,3 +2,4 @@ Django==1.10.3
 django-cors-headers==1.2.2
 requests==2.11.1
 -e git+https://github.com/Stufinite/djangoApiDec.py.git@master#egg=djangoApiDec
+django-cors-headers==1.2.2
