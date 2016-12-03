@@ -18,7 +18,6 @@ RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
 RUN git clone https://github.com/UDICatNCHU/KCM_web_api.git
 WORKDIR KCM_web_api
 RUN make install
-RUN ln -s /usr/bin/python3.5 /usr/bin/python
 
 # the port on which we will be running app server (django runserver / gunicorn)
 EXPOSE 8000
