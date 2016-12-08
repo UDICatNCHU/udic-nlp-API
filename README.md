@@ -1,7 +1,15 @@
 # KCM_web_api[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
 網頁版的KCM api，可以直接呼叫網址得到結果，並且會cache查詢過的結果  
-KCM API of web version, you can call the url directly and will cache the result in server.
+目前支援：
+* 中文版
+* 英文版
+* 泰文版
+KCM API of web version, you can call the url directly and will cache the result in server.  
+Now three languages are available:
+* Chinese
+* English
+* Thai
 
 
 ### API usage and Results
@@ -9,9 +17,9 @@ KCM API of web version, you can call the url directly and will cache the result 
 API使用方式（下面所寫的是api的URL pattern）  
 (Usage of API (pattern written below is URL pattern))：
 
-1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?issue={主題名稱}`
+1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}`
   * 查詢網址 (query url)：http://140.120.13.243:32777/api/kcmApi/?keyword=
-  * 範例 (Example)：`http://140.120.13.243:32777/api/kcmApi/?keyword=中興大學`
+  * 範例 (Example)：`http://140.120.13.243:32777/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
   * result：
   ```
   {
@@ -36,9 +44,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. OS：Ubuntu / OSX would be nice
 2. environment：need python3 `sudo apt-get update; sudo apt-get install; python3 python3-dev`
-3. 使用虛擬環境去安裝本套件 ( recommended ) ：`pip install virtualenv`
-  * 建立虛擬環境，取名叫作venv：`virtualenv venv`
-  *  啟動虛擬環境，這樣套件就會裝在目錄底下的venv資料夾：`. venv/bin/activate`
 
 ### Installing
 
@@ -63,13 +68,13 @@ There are two choice：
 Still has two choice to Run， it depends on which installed method you used：
 
 * By Git：
-  1. 先建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={} &`
+  1. 先建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={cht、eng} &`
   2. 啟動django伺服器(Open django Server)：`./manage.py runserver`
   3. 開啟瀏覽器，檢查一下API是否正常產出json資料(Open your browser and test whether it works or not.)
 * By Docker：
   1. 在背景執行container並且與host的port打通 ()：`sudo docker run -d -P --name={container name} kcm`
   2. 進入docker container建立KCM model(Enter docker container for building KCM model)：`sudo docker exec -it {container name} bash`
-  3. 建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={} &`
+  3. 建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={cht、eng} &`
   4. 退出container之後，開啟瀏覽器，檢查一下API是否正常產出json資料(Leave container and test whether it works or not.)
 
 
