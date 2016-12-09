@@ -18,8 +18,8 @@ API使用方式（下面所寫的是api的URL pattern）
 (Usage of API (pattern written below is URL pattern))：
 
 1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}`
-  * 查詢網址 (query url)：http://140.120.13.243:32782/api/kcmApi/?keyword=
-  * 範例 (Example)：`http://140.120.13.243:32782/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
+  * 查詢網址 (query url)：http://140.120.13.243:32785/api/kcmApi/?keyword=
+  * 範例 (Example)：`http://140.120.13.243:32785/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
   * result：
   ```
   {
@@ -33,6 +33,25 @@ API使用方式（下面所寫的是api的URL pattern）
     "學生": 55,
     "法商學院": 55,
     "農學院": 50
+  }
+  ```
+
+2. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kemApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}` (num的參數不加預設會回傳10個，建議使用這種模式因為有預先建立cache，否則真的要等很久) (num parameter is not recommended to add, cause it takes time to query model. If num parameter is absent, will use num=10 in default.)
+  * 查詢網址 (query url)：http://140.120.13.243:32785/api/kemApi/?keyword=
+  * 範例 (Example)：`http://140.120.13.243:32785/api/kemApi/?keyword=美國隊長&lang=cht&num=10`
+  * result：
+  ```
+  {
+    "X戰警": "0.6915161609649658",
+    "俠": "0.6872922778129578",
+    "復仇者": "0.6902425289154053",
+    "復仇者聯盟": "0.7779505252838135",
+    "神奇四俠": "0.7140904664993286",
+    "蜘蛛人": "0.7551226615905762",
+    "蜘蛛俠": "0.7653720378875732",
+    "蝙蝠俠": "0.7000312805175781",
+    "蟻人": "0.7080279588699341",
+    "變形金剛": "0.7029522657394409"
   }
   ```
 
