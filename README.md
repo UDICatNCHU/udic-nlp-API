@@ -18,8 +18,8 @@ API使用方式（下面所寫的是api的URL pattern）
 (Usage of API (pattern written below is URL pattern))：
 
 1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}`
-  * 查詢網址 (query url)：http://140.120.13.243:32777/api/kcmApi/?keyword=
-  * 範例 (Example)：`http://140.120.13.243:32777/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
+  * 查詢網址 (query url)：http://140.120.13.243:32782/api/kcmApi/?keyword=
+  * 範例 (Example)：`http://140.120.13.243:32782/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
   * result：
   ```
   {
