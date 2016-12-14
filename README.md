@@ -4,7 +4,8 @@
 目前支援：
 * 中文版
 * 英文版
-* 泰文版
+* 泰文版  
+
 KCM API of web version, you can call the url directly and will cache the result in server.  
 Now three languages are available:
 * Chinese
@@ -18,7 +19,6 @@ API使用方式（下面所寫的是api的URL pattern）
 (Usage of API (pattern written below is URL pattern))：
 
 1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}`
-  * 查詢網址 (query url)：http://140.120.13.243:32785/api/kcmApi/?keyword=
   * 範例 (Example)：`http://140.120.13.243:32785/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
   * result：
   ```
@@ -37,7 +37,6 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 2. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kemApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}` (num的參數不加預設會回傳10個，建議使用這種模式因為有預先建立cache，否則真的要等很久) (num parameter is not recommended to add, cause it takes time to query model. If num parameter is absent, will use num=10 in default.)
-  * 查詢網址 (query url)：http://140.120.13.243:32785/api/kemApi/?keyword=
   * 範例 (Example)：`http://140.120.13.243:32785/api/kemApi/?keyword=美國隊長&lang=cht&num=10`
   * result：
   ```
