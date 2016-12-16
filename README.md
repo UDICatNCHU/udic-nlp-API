@@ -1,12 +1,12 @@
-# KCM_web_api[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
+# udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
-網頁版的KCM api，可以直接呼叫網址得到結果，並且會cache查詢過的結果  
+網頁版的udic nlp API，可以直接呼叫網址得到結果，並且會cache查詢過的結果  
 目前支援：
 * 中文版
 * 英文版
 * 泰文版  
 
-KCM API of web version, you can call the url directly and will cache the result in server.  
+udic nlp API of web version, you can call the url directly and will cache the result in server.  
 Now three languages are available:
 * Chinese
 * English
@@ -77,7 +77,6 @@ There are two choice：
   3. 安裝 (Install)：`make install`
 * Install By Docker：
   1. 此指令必須在有Dockerfile的目錄下執行 (You can only run this command in directory which has Dockerfile)：`sudo docker build -t kcm .`
-
 
 ## Running & Testing
 
