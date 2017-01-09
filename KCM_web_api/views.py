@@ -2,6 +2,7 @@
 from django.http import JsonResponse
 from djangoApiDec.djangoApiDec import queryString_required
 from KCM.KCM import KCM
+from KCM.build.import2DB import import2Mongo
 from KEM.KEM import KEM
 import os
 
@@ -19,6 +20,19 @@ def kcmApi(request):
 	pq = kcmObject.get_cor_term_freq_pq(model, keyword, 1)
 	result = kcmObject.getOrCreate(keyword, kcmObject.return_top_n_cor_terms, pq)
 
+	return JsonResponse(result, safe=False)
+
+@queryString_required(['lang', 'keyword'])
+def mongoApi(request):
+	"""Generate list of term data source files
+	Returns:
+		if contains invalid queryString key, it will raise exception.
+	"""
+	keyword = request.GET['keyword']
+	lang = request.GET['lang']
+
+	i = import2Mongo(lang)
+	result = i.get(keyword, int(request.GET['num']) if 'num' in request.GET else 10)
 	return JsonResponse(result, safe=False)
 
 @queryString_required(['lang', 'keyword'])
