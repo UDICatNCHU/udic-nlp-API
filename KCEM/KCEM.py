@@ -17,9 +17,9 @@ class KCEM(object):
 		if result.count()==0:
 			kcm_lists = list()
 
-			for kemtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kemApi/?keyword={}&lang={}&num={}'.format(keyword, lang, kem_topn_num)).text):
+			for kemtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kem/?keyword={}&lang={}&num={}'.format(keyword, lang, kem_topn_num)).text):
 				kcm_lists.append( list( kcmtopn 
-					for kcmtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kcmApi/?keyword={}&lang={}&num={}'.format(kemtopn[0], lang, kcm_topn_num)).text )
+					for kcmtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword={}&lang={}&num={}'.format(kemtopn[0], lang, kcm_topn_num)).text )
 					) 
 				)
 
