@@ -33,6 +33,7 @@ def kemApi(request):
 
 @queryString_required(['lang', 'keyword'])
 def kcemApi(request):
+	import json, requests
 	"""Generate list of term data source files
 	Returns:
 		if contains invalid queryString key, it will raise exception.
@@ -40,32 +41,20 @@ def kcemApi(request):
 	keyword = request.GET['keyword']
 	lang = request.GET['lang']
 
-	kem_topn_num=30
-	kcm_topn_num=50
+	kem_topn_num=100
+	kcm_topn_num=10
+	kcm_lists = list()
 
-	kcm_lists=[]
-	count=0
+	for kemtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kemApi/?keyword={}&lang={}&num={}'.format(keyword, lang, kem_topn_num)).text):
+		kcm_lists.append( list( kcmtopn 
+			for kcmtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kcmApi/?keyword={}&lang={}&num={}'.format(kemtopn[0], lang, kcm_topn_num)).text )
+			) 
+		)
 
-	# for kemtopn in json.loads(requests.get('http://api.udic.cs.nchu.edu.tw/api/kemApi/?keyword={}&lang={}'.format(keyword, lang))):
-	# 	temp=[]
-	# 	if count!=kem_topn_num:
-	# 		try:
-	# 			for kcmtopn in kcm_search(kemtopn[0],kcm_topn_num):
-	# 				temp.append(kcmtopn[0])
-	# 			count=count+1
-	# 		except:
-	# 			print 'not found'
-	# 		if len(temp)!=0:
-	# 			kcm_lists.append(temp)
-	# 	else:
-	# 		break
-	# entity={}
-	# for kcm_list in kcm_lists:#統計出現的字
-	# 	for word in kcm_list:
-	# 		if word in entity:
-	# 			entity[word]=entity[word]+1.0/float(kem_topn_num)
-	# 		else :
-	# 			entity[word]=1.0/float(kem_topn_num)
-	# sorted_entity = sorted(entity.items(), key=operator.itemgetter(1),reverse=True)
-	# for x in sorted_entity[0:10]:
-	return JsonResponse(result, safe=False)
+	entity={}
+	for kcm_list in kcm_lists:#統計出現的字
+		for word in kcm_list:
+			entity[word[0]] = entity.setdefault(word[0], 0) + 1.0/float(kem_topn_num)
+
+	sorted_entity = sorted(entity.items(), key=lambda x: x[1], reverse=True)
+	return JsonResponse(sorted_entity[:10], safe=False)
