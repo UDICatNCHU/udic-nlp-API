@@ -19,7 +19,7 @@ from KCM_web_api import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/kcmApi/$', views.kcmApi, name='kcmApi'), 
-    url(r'^api/kemApi/$', views.kemApi, name='kemApi'),
-    url(r'^api/kcemApi/$', views.kcemApi, name='kcemApi'), 
+    url(r'^api/kcm/$', views.kcm, name='kcm'), 
+    url(r'^api/kem/$', views.kem, name='kem'),
+    url(r'^api/kcem/$', views.kcem, name='kcem'), 
 ]

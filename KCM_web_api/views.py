@@ -7,7 +7,7 @@ from KEM.KEM import KEM
 import os
 
 @queryString_required(['lang', 'keyword'])
-def kcmApi(request):
+def kcm(request):
 	"""Generate list of term data source files
 	Returns:
 		if contains invalid queryString key, it will raise exception.
@@ -20,7 +20,7 @@ def kcmApi(request):
 	return JsonResponse(result, safe=False)
 
 @queryString_required(['lang', 'keyword'])
-def kemApi(request):
+def kem(request):
 	"""Generate list of term data source files
 	Returns:
 		if contains invalid queryString key, it will raise exception.
@@ -32,7 +32,7 @@ def kemApi(request):
 	return JsonResponse(kemObject.getTerms(model, keyword, int(request.GET['num']) if 'num' in request.GET else 10), safe=False)
 
 @queryString_required(['lang', 'keyword'])
-def kcemApi(request):
+def kcem(request):
 	import json, requests
 	"""Generate list of term data source files
 	Returns:
