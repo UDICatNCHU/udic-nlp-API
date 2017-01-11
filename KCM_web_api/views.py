@@ -44,4 +44,4 @@ def kcem(request):
 	kcm = request.GET['kcm']
 	kem = request.GET['kem']
 	k = KCEM('mongodb://140.120.13.243:27017/')
-	return JsonResponse(k.get(keyword, lang, int(request.GET['num']) if 'num' in request.GET else 10, kcm, kem), safe=False)
+	return JsonResponse(k.get(keyword, lang, num = int(request.GET['num']) if 'num' in request.GET else 10, kem_topn_num=kem, kcm_topn_num=kcm), safe=False)

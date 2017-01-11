@@ -13,7 +13,6 @@ class KCEM(object):
 			if contains invalid queryString key, it will raise exception.
 		"""
 		result = self.Collect.find({'key':keyword, str(kcm_topn_num)+str(kem_topn_num):{'$exists':True}}, {str(kcm_topn_num)+str(kem_topn_num):1, '_id':False}).limit(1)
-
 		if result.count()==0:
 			kcm_lists = list()
 
