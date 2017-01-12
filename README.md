@@ -1,10 +1,5 @@
 # udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
-網頁版的udic nlp API，可以直接呼叫網址得到結果，並且會cache查詢過的結果  
-目前支援：
-* 中文版
-* 英文版
-* 泰文版  
 
 udic nlp API of web version, you can call the url directly and will cache the result in server.  
 Now three languages are available:
@@ -18,27 +13,41 @@ Now three languages are available:
 API使用方式（下面所寫的是api的URL pattern）  
 (Usage of API (pattern written below is URL pattern))：
 
-1. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kcmApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}`
-  * 範例 (Example)：`http://140.120.13.243:32785/api/kcmApi/?keyword=中興大學&lang=cht&num=10`
-  * result：
+##### parameter
+
+* `keyword`：the word you want to query.
+* `lang`：Language you use. below are available language version：
+  * `cht`：中文
+  * `eng`：English `Still working on it`
+  * `thai`：Thai `Still working on it`
+* `num`(optional)：The amount of result you want to get (Default：`10`)
+* `kcm`, `kem`：Used by `kcem`, you can customarily adjust these two parameter which will get different `kcem` performance.
+
+##### url pattern
+
+1. *`/api/kcm/?keyword=<>&lang=<>&num=<>`*  
+  取得關鍵字的`相關字詞` (Get `correlation terms` of a keyword)
+  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword=中興大學&lang=cht`
+
   ```
-  {
-    "大學": 164,
-    "名": 93,
-    "於": 88,
-    "後": 86,
-    "教授": 81,
-    "臺灣": 72,
-    "畢業": 66,
-    "學生": 55,
-    "法商學院": 55,
-    "農學院": 50
-  }
+  [
+    ["大學",58],
+    ["臺灣",52],
+    ["畢業",36],
+    ["教授",33],
+    ["法商學院",22],
+    ["學生",19],
+    ["研究所",19],
+    ["農學院",19],
+    ["臺灣省立",16],
+    ["國立中興大學",15]
+  ]
   ```
 
-2. 取得關鍵字的相關字詞 (Get correlation terms of a keyword, put the KeyWord you want to query after `/?issue=`)： `/api/kemApi/?keyword={主題名稱}&lang={語言參數，有cht、eng、thai可以選}&num={回傳的單字數量，請輸入數字}` (num的參數不加預設會回傳10個，建議使用這種模式因為有預先建立cache，否則真的要等很久) (num parameter is not recommended to add, cause it takes time to query model. If num parameter is absent, will use num=10 in default.)
-  * 範例 (Example)：`http://140.120.13.243:32785/api/kemApi/?keyword=美國隊長&lang=cht&num=10`
-  * result：
+2. *`/api/kem/?keyword=<>&lang=<>&num=<>`*  
+取得關鍵字的`同義字` (Get `synonym` by keyword)
+  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=美國隊長&lang=cht`
+
   ```
   {
     "X戰警": "0.6915161609649658",
@@ -52,6 +61,25 @@ API使用方式（下面所寫的是api的URL pattern）
     "蟻人": "0.7080279588699341",
     "變形金剛": "0.7029522657394409"
   }
+  ```
+
+3. *`/api/kcem/?keyword=<>&lang=<>&num=<>`*  
+取得關鍵字的`實體間之從屬關聯` (Get `is-a relationship` of a keyword)
+  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
+
+  ```
+  [
+    ["歌手","0.5800000000000003"],
+    ["專輯","0.5500000000000003"],
+    ["香港","0.3900000000000002"],
+    ["歌曲","0.34000000000000014"],
+    ["臺灣","0.34000000000000014"],
+    ["演唱會",0.17],
+    ["音樂",0.17],
+    ["電影",0.15],
+    ["主演",0.08],
+    ["節目",0.08]
+  ]
   ```
 
 ## Getting Started
