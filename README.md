@@ -10,75 +10,76 @@ Now three languages are available:
 
 ### API usage and Results
 
-APIÊ¹ÓÃ·½Ê½£¨ÏÂÃæËùŒ‘µÄÊÇapiµÄURL pattern£©  
-(Usage of API (pattern written below is URL pattern))£º
+APIä½¿ç”¨æ–¹å¼ï¼ˆä¸‹é¢æ‰€å¯«çš„æ˜¯apiçš„URL patternï¼‰  
+(Usage of API (pattern written below is URL pattern))ï¼š
 
 ##### parameter
 
-* `keyword`£ºthe word you want to query.
-* `lang`£ºLanguage you use. below are available language version£º
-  * `cht`£ºÖĞÎÄ
-  * `eng`£ºEnglish `Still working on it`
-  * `thai`£ºThai `Still working on it`
-* `num`(optional)£ºThe amount of result you want to get (Default£º`10`)
-* `kcm`, `kem`£ºUsed by `kcem`, you can customarily adjust these two parameter which will get different `kcem` performance.
+* `keyword`ï¼šthe word you want to query.
+* `lang`ï¼šLanguage you use. below are available language versionï¼š
+  * `cht`ï¼šä¸­æ–‡
+  * `eng`ï¼šEnglish `Still working on it`
+  * `thai`ï¼šThai `Still working on it`
+* `num`(optional)ï¼šThe amount of result you want to get (Defaultï¼š`10`)
+* `kcm`, `kem`ï¼šUsed by `kcem`, you can customarily adjust these two parameter which will get different `kcem` performance.
 
 ##### url pattern
 
 1. *`/api/kcm/?keyword=<>&lang=<>&num=<>`*  
-  È¡µÃêPæI×ÖµÄ`ÏàêP×ÖÔ~` (Get `correlation terms` of a keyword)
-  * ¹ Àı (Example)£º`http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword=ÖĞÅd´óŒW&lang=cht`
+  å–å¾—é—œéµå­—çš„`ç›¸é—œå­—è©` (Get `correlation terms` of a keyword)
+  * ç¯„ä¾‹ (Example)ï¼š`http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword=ä¸­èˆˆå¤§å­¸&lang=cht`
 
   ```
   [
-    ["´óŒW",58],
-    ["Å_³",52],
-    ["®…˜I",36],
-    ["½ÌÊÚ",33],
-    ["·¨ÉÌŒWÔº",22],
-    ["ŒWÉú",19],
-    ["ÑĞ¾¿Ëù",19],
-    ["ŞrŒWÔº",19],
-    ["Å_³Ê¡Á¢",16],
-    ["‡øÁ¢ÖĞÅd´óŒW",15]
+    ["å¤§å­¸",58],
+    ["è‡ºç£",52],
+    ["ç•¢æ¥­",36],
+    ["æ•™æˆ",33],
+    ["æ³•å•†å­¸é™¢",22],
+    ["å­¸ç”Ÿ",19],
+    ["ç ”ç©¶æ‰€",19],
+    ["è¾²å­¸é™¢",19],
+    ["è‡ºç£çœç«‹",16],
+    ["åœ‹ç«‹ä¸­èˆˆå¤§å­¸",15]
   ]
   ```
 
 2. *`/api/kem/?keyword=<>&lang=<>&num=<>`*  
-È¡µÃêPæI×ÖµÄ`Í¬Áx×Ö` (Get `synonym` by keyword)
-  * ¹ Àı (Example)£º`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=ÃÀ‡øê éL&lang=cht`
+å–å¾—é—œéµå­—çš„`åŒç¾©å­—` (Get `synonym` by keyword)
+  * ç¯„ä¾‹ (Example)ï¼š`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=ç¾åœ‹éšŠé•·&lang=cht`
 
   ```
   {
-    "X‘ğ¾¯": "0.6915161609649658",
-    "‚b": "0.6872922778129578",
-    "Í³ğÕß": "0.6902425289154053",
-    "Í³ğÕßÂ“ÃË": "0.7779505252838135",
-    "ÉñÆæËÄ‚b": "0.7140904664993286",
-    "Ö©ÖëÈË": "0.7551226615905762",
-    "Ö©Öë‚b": "0.7653720378875732",
-    "òùòğ‚b": "0.7000312805175781",
-    "ÏÈË": "0.7080279588699341",
-    "×ƒĞÎ½ğ„‚": "0.7029522657394409"
+    "Xæˆ°è­¦": "0.6915161609649658",
+    "ä¿ ": "0.6872922778129578",
+    "å¾©ä»‡è€…": "0.6902425289154053",
+    "å¾©ä»‡è€…è¯ç›Ÿ": "0.7779505252838135",
+    "ç¥å¥‡å››ä¿ ": "0.7140904664993286",
+    "èœ˜è››äºº": "0.7551226615905762",
+    "èœ˜è››ä¿ ": "0.7653720378875732",
+    "è™è ä¿ ": "0.7000312805175781",
+    "èŸ»äºº": "0.7080279588699341",
+    "è®Šå½¢é‡‘å‰›": "0.7029522657394409"
   }
   ```
 
 3. *`/api/kcem/?keyword=<>&lang=<>&num=<>`*  
-È¡µÃêPæI×ÖµÄ`ŒówégÖ®ÄŒÙêPÂ“` (Get `is-a relationship` of a keyword)
-  * ¹ Àı (Example)£º`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=ÖÜ½Ü‚&lang=cht&num=10&kcm=5&kem=100`
+æ­¤APIæä¾›ï¼šæ–¼å·²çŸ¥è©(Term)èˆ‡æ¦‚å¿µ(Concept)ä¹‹é–“æ‰¾å‡ºâ€is-aâ€ä¹‹1-1å°æ‡‰é—œä¿‚(hyperonym-hyponym)ã€‚èˆ‰ä¾‹ä¾†èªªï¼Œ"äº”æœˆå¤©"æ˜¯"æ¨‚åœ˜"ï¼Œ"é¦™è•‰"æ˜¯"æ°´æœ"ã€‚
+
+  * ç¯„ä¾‹ (Example)ï¼š`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=å‘¨æ°å€«&lang=cht&num=10&kcm=5&kem=100`
 
   ```
   [
-    ["¸èÊÖ","0.5800000000000003"],
-    ["Œ£İ‹","0.5500000000000003"],
-    ["Ïã¸Û","0.3900000000000002"],
-    ["¸èÇú","0.34000000000000014"],
-    ["Å_³","0.34000000000000014"],
-    ["Ñİ³ª•ş",0.17],
-    ["Òô˜·",0.17],
-    ["ëŠÓ°",0.15],
-    ["Ö÷Ñİ",0.08],
-    ["¹Ä¿",0.08]
+    ["æ­Œæ‰‹","0.5800000000000003"],
+    ["å°ˆè¼¯","0.5500000000000003"],
+    ["é¦™æ¸¯","0.3900000000000002"],
+    ["æ­Œæ›²","0.34000000000000014"],
+    ["è‡ºç£","0.34000000000000014"],
+    ["æ¼”å”±æœƒ",0.17],
+    ["éŸ³æ¨‚",0.17],
+    ["é›»å½±",0.15],
+    ["ä¸»æ¼”",0.08],
+    ["ç¯€ç›®",0.08]
   ]
   ```
 
@@ -88,51 +89,51 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisities
 
-1. OS£ºUbuntu / OSX would be nice
-2. environment£ºneed python3 `sudo apt-get update; sudo apt-get install; python3 python3-dev`
+1. OSï¼šUbuntu / OSX would be nice
+2. environmentï¼šneed python3 `sudo apt-get update; sudo apt-get install; python3 python3-dev`
 
 ### Installing
 
-There are two choice£º
+There are two choiceï¼š
 
-* Install By Git£º
-  1. ÏÂİd (Download this project)£º`git clone https://github.com/UDICatNCHU/KCM_web_api.git`
-  2. Ê¹ÓÃÌ“”M­h¾³ (Use virtualenv is recommended)£º
-    1. ½¨Á¢Ì“”M­h¾³£¬È¡Ãû½Ğ×÷venv£º`virtualenv venv`
-    2. †¢„Ó·½·¨ (How to activate virtualenv)
-      1. for Linux£º`. venv/bin/activate`
-      2. for Windows£º`venv\Scripts\activate`
-  3. °²Ñb (Install)£º`make install`
-* Install By Docker£º
-  1. ´ËÖ¸Áî±ØíšÔÚÓĞDockerfileµÄÄ¿ä›ÏÂˆÌĞĞ (You can only run this command in directory which has Dockerfile)£º`sudo docker build -t kcm .`
+* Install By Gitï¼š
+  1. ä¸‹è¼‰ (Download this project)ï¼š`git clone https://github.com/UDICatNCHU/KCM_web_api.git`
+  2. ä½¿ç”¨è™›æ“¬ç’°å¢ƒ (Use virtualenv is recommended)ï¼š
+    1. å»ºç«‹è™›æ“¬ç’°å¢ƒï¼Œå–åå«ä½œvenvï¼š`virtualenv venv`
+    2. å•Ÿå‹•æ–¹æ³• (How to activate virtualenv)
+      1. for Linuxï¼š`. venv/bin/activate`
+      2. for Windowsï¼š`venv\Scripts\activate`
+  3. å®‰è£ (Install)ï¼š`make install`
+* Install By Dockerï¼š
+  1. æ­¤æŒ‡ä»¤å¿…é ˆåœ¨æœ‰Dockerfileçš„ç›®éŒ„ä¸‹åŸ·è¡Œ (You can only run this command in directory which has Dockerfile)ï¼š`sudo docker build -t kcm .`
 
 ## Running & Testing
 
 ## Run
 
-Still has two choice to Run£¬ it depends on which installed method you used£º
+Still has two choice to Runï¼Œ it depends on which installed method you usedï¼š
 
-* By Git£º
-  1. ÏÈ½¨Á¢KCM model, langááÃæÕˆ½ÓÄãÒª½¨Á¢µÄÕZÑÔÄ£ĞÍ (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)£º`cd KCM; nohup make init lang={cht¡¢eng} &`
-  2. †¢„ÓdjangoËÅ·şÆ÷(Open django Server)£º`./manage.py runserver`
-  3. é_†¢gÓ[Æ÷£¬™z²éÒ»ÏÂAPIÊÇ·ñÕı³£®a³öjsonÙYÁÏ(Open your browser and test whether it works or not.)
-* By Docker£º
-  1. ÔÚ±³¾°ˆÌĞĞcontainerKÇÒÅchostµÄport´òÍ¨ ()£º`sudo docker run -d -P --name={container name} kcm`
-  2. ßMÈëdocker container½¨Á¢KCM model(Enter docker container for building KCM model)£º`sudo docker exec -it {container name} bash`
-  3. ½¨Á¢KCM model, langááÃæÕˆ½ÓÄãÒª½¨Á¢µÄÕZÑÔÄ£ĞÍ (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)£º`cd KCM; nohup make init lang={cht¡¢eng} &`
-  4. ÍË³öcontainerÖ®áá£¬é_†¢gÓ[Æ÷£¬™z²éÒ»ÏÂAPIÊÇ·ñÕı³£®a³öjsonÙYÁÏ(Leave container and test whether it works or not.)
+* By Gitï¼š
+  1. å…ˆå»ºç«‹KCM model, langå¾Œé¢è«‹æ¥ä½ è¦å»ºç«‹çš„èªè¨€æ¨¡å‹ (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)ï¼š`cd KCM; nohup make init lang={chtã€eng} &`
+  2. å•Ÿå‹•djangoä¼ºæœå™¨(Open django Server)ï¼š`./manage.py runserver`
+  3. é–‹å•Ÿç€è¦½å™¨ï¼Œæª¢æŸ¥ä¸€ä¸‹APIæ˜¯å¦æ­£å¸¸ç”¢å‡ºjsonè³‡æ–™(Open your browser and test whether it works or not.)
+* By Dockerï¼š
+  1. åœ¨èƒŒæ™¯åŸ·è¡Œcontainerä¸¦ä¸”èˆ‡hostçš„portæ‰“é€š ()ï¼š`sudo docker run -d -P --name={container name} kcm`
+  2. é€²å…¥docker containerå»ºç«‹KCM model(Enter docker container for building KCM model)ï¼š`sudo docker exec -it {container name} bash`
+  3. å»ºç«‹KCM model, langå¾Œé¢è«‹æ¥ä½ è¦å»ºç«‹çš„èªè¨€æ¨¡å‹ (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)ï¼š`cd KCM; nohup make init lang={chtã€eng} &`
+  4. é€€å‡ºcontainerä¹‹å¾Œï¼Œé–‹å•Ÿç€è¦½å™¨ï¼Œæª¢æŸ¥ä¸€ä¸‹APIæ˜¯å¦æ­£å¸¸ç”¢å‡ºjsonè³‡æ–™(Leave container and test whether it works or not.)
 
 
 ### Break down into end to end tests
 
 ### And coding style tests
 
-Ä¿Ç°›]ÓĞcoding style tests...  
+ç›®å‰æ²’æœ‰coding style tests...  
 There's no coding style tests yet.
 
 ## Deployment
 
-Ä¿Ç°Ö»ÊÇÒ»°ãµÄ **django** ³ÌÊ½£¬Ê¹ÓÃgunicorn»òÕßuwsgiÑÊğ¼´¿É  
+ç›®å‰åªæ˜¯ä¸€èˆ¬çš„ **django** ç¨‹å¼ï¼Œä½¿ç”¨gunicornæˆ–è€…uwsgiä½ˆç½²å³å¯  
 It's just a normal django project, use gunicorn or uwsgi can deploy.
 
 ## Built With
@@ -146,7 +147,7 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## Contributors
 
-* **ˆÌ©¬|** [david](https://github.com/david30907d)
+* **å¼µæ³°ç‘‹** [david](https://github.com/david30907d)
 
 ## License
 
@@ -154,4 +155,4 @@ This project is licensed under the **MIT** License - see the [LICENSE.md](LICENS
 
 ## Acknowledgments
 
-¸ĞÖxKCMµÄËùÓĞ×÷Õß Thanks all Contributors of KCM
+æ„Ÿè¬KCMçš„æ‰€æœ‰ä½œè€… Thanks all Contributors of KCM
