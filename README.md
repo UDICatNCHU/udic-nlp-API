@@ -26,7 +26,7 @@ API使用方式（下面所寫的是api的URL pattern）
 ##### url pattern
 
 1. *`/api/kcm/?keyword=<>&lang=<>&num=<>`*  
-  取得關鍵字的`相關字詞` (Get `correlation terms` of a keyword)
+  此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)
   * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword=中興大學&lang=cht`
 
   ```
@@ -45,8 +45,8 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 2. *`/api/kem/?keyword=<>&lang=<>&num=<>`*  
-取得關鍵字的`同義字` (Get `synonym` by keyword)
-  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=美國隊長&lang=cht`
+ 此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。
+  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=美國隊長&lang=cht`
 
   ```
   {
@@ -64,7 +64,7 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 3. *`/api/kcem/?keyword=<>&lang=<>&num=<>`*  
-此API提供：於已知詞(Term)與概念(Concept)之間找出”is-a”之1-1對應關係(hyperonym-hyponym)。舉例來說，"五月天"是"樂團"，"香蕉"是"水果"。
+ 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。舉例而言，"五月天"是"樂團"，"香蕉"是"水果"，"周杰倫"是"歌手"。
 
   * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
 
