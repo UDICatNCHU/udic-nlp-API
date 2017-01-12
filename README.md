@@ -1,11 +1,22 @@
 # udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
+# 中興大學普及資料與智慧運算實驗室所開發之字詞關聯查詢web api
+目前我們提供三種模式之字詞關聯查詢
 
-udic nlp API of web version, you can call the url directly and will cache the result in server.  
-Now three languages are available:
-* Chinese
-* English
-* Thai
+* 頻繁共現關聯 (Co-occurrence Relationship)
+  例如，輸入蔡英文，將會回傳一系列與蔡英文頻繁一起出現之字詞，如總統、台灣、民主進步黨等。
+  
+  
+* 上下文情境相似關聯 (Similar Context Sharing Relationship)
+  例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。
+  
+* 字詞概念推論 (Hyperonym-Hyponym Relationship)
+  例如，"五月天"是"樂團"，"香蕉"是"水果"，"周杰倫"是"歌手"。
+
+目前提供三種語言版本
+* 中文 Chinese
+* 英文 English
+* 泰文 Thai
 
 
 ### API usage and Results
@@ -45,7 +56,7 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 2. *`/api/kem/?keyword=<>&lang=<>&num=<>`*  
- 此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。
+ 此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。
   * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=美國隊長&lang=cht`
 
   ```
@@ -64,8 +75,7 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 3. *`/api/kcem/?keyword=<>&lang=<>&num=<>`*  
- 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。舉例而言，"五月天"是"樂團"，"香蕉"是"水果"，"周杰倫"是"歌手"。
-
+ 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
   * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
 
   ```
