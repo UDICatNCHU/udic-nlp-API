@@ -5,6 +5,7 @@ from KCM.KCM import KCM
 from KCM.build.import2DB import import2Mongo
 from KEM.KEM import KEM
 from KCEM.KCEM import KCEM
+from .settings_database import uri
 import os
 
 @queryString_required(['lang', 'keyword'])
@@ -16,7 +17,7 @@ def kcm(request):
 	keyword = request.GET['keyword']
 	lang = request.GET['lang']
 
-	i = import2Mongo(lang, 'mongodb://140.120.13.243:27017/')
+	i = import2Mongo(lang, uri)
 	result = i.get(keyword, int(request.GET['num']) if 'num' in request.GET else 10)
 	return JsonResponse(result, safe=False)
 
@@ -28,7 +29,7 @@ def kem(request):
 	"""
 	keyword = request.GET['keyword']
 	lang = request.GET['lang']
-	kemObject = KEM( int(request.GET['num']) if 'num' in request.GET else 10, 'model', 'KEM/', 'mongodb://140.120.13.243:27017/')
+	kemObject = KEM( int(request.GET['num']) if 'num' in request.GET else 10, 'model', 'KEM/', uri)
 	model = kemObject.getFilePath(lang)
 	return JsonResponse(kemObject.getTerms(model, keyword, int(request.GET['num']) if 'num' in request.GET else 10), safe=False)
 
@@ -43,5 +44,5 @@ def kcem(request):
 	lang = request.GET['lang']
 	kcm = request.GET['kcm']
 	kem = request.GET['kem']
-	k = KCEM('mongodb://140.120.13.243:27017/')
+	k = KCEM(uri)
 	return JsonResponse(k.get(keyword, lang, num = int(request.GET['num']) if 'num' in request.GET else 10, kem_topn_num=kem, kcm_topn_num=kcm), safe=False)
