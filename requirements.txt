@@ -1,6 +1,6 @@
 Django==1.10.3
 django-cors-headers==1.2.2
--e git://github.com/Stufinite/djangoApiDec.git@master#egg=djangoApiDec
+djangoApiDec
 pymongo==3.4.0
 PyPrind==2.9.9
 requests==2.11.1
