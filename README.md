@@ -6,10 +6,10 @@
 * 頻繁共現關聯 (Co-occurrence Relationship)
   例如，輸入蔡英文，將會回傳一系列與蔡英文頻繁一起出現之字詞，如總統、台灣、民主進步黨等。
   
-  
+
 * 上下文情境相似關聯 (Similar Context Sharing Relationship)
   例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。
-  
+
 * 字詞概念推論 (Hyperonym-Hyponym Relationship)
   例如，"五月天"是"樂團"，"香蕉"是"水果"，"周杰倫"是"歌手"。
 
@@ -93,59 +93,6 @@ API使用方式（下面所寫的是api的URL pattern）
   ]
   ```
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Prerequisities
-
-1. OS：Ubuntu / OSX would be nice
-2. environment：need python3 `sudo apt-get update; sudo apt-get install; python3 python3-dev`
-
-### Installing
-
-There are two choice：
-
-* Install By Git：
-  1. 下載 (Download this project)：`git clone https://github.com/UDICatNCHU/KCM_web_api.git`
-  2. 使用虛擬環境 (Use virtualenv is recommended)：
-    1. 建立虛擬環境，取名叫作venv：`virtualenv venv`
-    2. 啟動方法 (How to activate virtualenv)
-      1. for Linux：`. venv/bin/activate`
-      2. for Windows：`venv\Scripts\activate`
-  3. 安裝 (Install)：`make install`
-* Install By Docker：
-  1. 此指令必須在有Dockerfile的目錄下執行 (You can only run this command in directory which has Dockerfile)：`sudo docker build -t kcm .`
-
-## Running & Testing
-
-## Run
-
-Still has two choice to Run， it depends on which installed method you used：
-
-* By Git：
-  1. 先建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={cht、eng} &`
-  2. 啟動django伺服器(Open django Server)：`./manage.py runserver`
-  3. 開啟瀏覽器，檢查一下API是否正常產出json資料(Open your browser and test whether it works or not.)
-* By Docker：
-  1. 在背景執行container並且與host的port打通 ()：`sudo docker run -d -P --name={container name} kcm`
-  2. 進入docker container建立KCM model(Enter docker container for building KCM model)：`sudo docker exec -it {container name} bash`
-  3. 建立KCM model, lang後面請接你要建立的語言模型 (You need to build KCM model first, you can pass `cht` or `eng` to lang parameter)：`cd KCM; nohup make init lang={cht、eng} &`
-  4. 退出container之後，開啟瀏覽器，檢查一下API是否正常產出json資料(Leave container and test whether it works or not.)
-
-
-### Break down into end to end tests
-
-### And coding style tests
-
-目前沒有coding style tests...  
-There's no coding style tests yet.
-
-## Deployment
-
-目前只是一般的 **django** 程式，使用gunicorn或者uwsgi佈署即可  
-It's just a normal django project, use gunicorn or uwsgi can deploy.
-
 ## Built With
 
 * Django 1.10.2
@@ -157,6 +104,10 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## Contributors
 
+* **范耀中** [教授](http://web.nchu.edu.tw/~yfan/)
+* **黃思穎**
+* **陳聖軒**
+* **鄭銘毅**
 * **張泰瑋** [david](https://github.com/david30907d)
 
 ## License
