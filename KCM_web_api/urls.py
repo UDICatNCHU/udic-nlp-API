@@ -29,3 +29,15 @@ import kcem.urls
 urlpatterns += [
     url(r'^kcem/', include(kcem.urls))
 ]
+
+# DbscanApi
+import DbscanApi.urls
+urlpatterns += [
+    url(r'^DbscanApi/',include(DbscanApi.urls, namespace="DbscanApi") ),
+]
+
+# jiebaWebApi
+import jiebaWebApi.urls
+urlpatterns += [
+    url(r'^jiebaWebApi/',include(jiebaWebApi.urls, namespace="jiebaWebApi") ),
+]
