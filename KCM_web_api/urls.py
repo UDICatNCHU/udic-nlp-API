@@ -23,6 +23,13 @@ urlpatterns = [
     # url(r'^api/kem/$', views.kem, name='kem'),
 ]
 
+# kcm
+
+import kcmApp.urls
+urlpatterns += [
+    url(r'^kcm/', include(kcmApp.urls))
+]
+
 # KCEM
 
 import kcem.urls
