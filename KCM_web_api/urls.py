@@ -19,7 +19,6 @@ from KCM_web_api import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^api/kcm/$', views.kcm, name='kcm'), 
     # url(r'^api/kem/$', views.kem, name='kem'),
 ]
 
@@ -28,6 +27,13 @@ urlpatterns = [
 import kcmApp.urls
 urlpatterns += [
     url(r'^kcm/', include(kcmApp.urls))
+]
+
+# pmiOfKcm
+
+import PMIofKCM.urls
+urlpatterns += [
+    url(r'^pmi/', include(PMIofKCM.urls))
 ]
 
 # KCEM
