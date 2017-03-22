@@ -8,6 +8,7 @@ simplejson==3.10.0
 
 # made by ourselves
 kcmApp
+PMIofKCM
 kcem
 DbscanApi
 jiebaWebApi
