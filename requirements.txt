@@ -13,3 +13,4 @@ kcem
 DbscanApi
 jiebaWebApi
 -e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM
+swingerApp

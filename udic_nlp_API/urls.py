@@ -1,4 +1,4 @@
-"""KCM_web_api URL Configuration
+"""udic_nlp_API URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from KCM_web_api import views
+from udic_nlp_API import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -43,14 +43,20 @@ urlpatterns += [
     url(r'^kcem/', include(kcem.urls))
 ]
 
-# DbscanApi
-import DbscanApi.urls
-urlpatterns += [
-    url(r'^DbscanApi/',include(DbscanApi.urls, namespace="DbscanApi") ),
-]
+# # DbscanApi
+# import DbscanApi.urls
+# urlpatterns += [
+#     url(r'^DbscanApi/',include(DbscanApi.urls, namespace="DbscanApi") ),
+# ]
 
 # jiebaWebApi
 import jiebaWebApi.urls
 urlpatterns += [
     url(r'^jiebaWebApi/',include(jiebaWebApi.urls, namespace="jiebaWebApi") ),
+]
+
+# swingerApp
+import swingerApp.urls
+urlpatterns += [
+    url(r'^swinger/', include(swingerApp.urls))
 ]
