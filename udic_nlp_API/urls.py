@@ -29,6 +29,13 @@ urlpatterns += [
     url(r'^kcm/', include(kcmApp.urls))
 ]
 
+# kem
+
+import kem.urls
+urlpatterns += [
+    url(r'^kem/', include(kem.urls))
+]
+
 # pmiOfKcm
 
 import PMIofKCM.urls
