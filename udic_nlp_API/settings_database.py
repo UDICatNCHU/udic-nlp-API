@@ -1,6 +1,6 @@
 from .settings import DEBUG
 import urllib
-p=urllib.parse.quote('udic@720')
+p=urllib.parse.quote('')
 
 MongoUri = {
     "DEBUG":None,

@@ -19,7 +19,6 @@ from udic_nlp_API import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^api/kem/$', views.kem, name='kem'),
 ]
 
 # kcm
