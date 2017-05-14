@@ -21,13 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-# kcm
-
-import kcmApp.urls
-urlpatterns += [
-    url(r'^kcm/', include(kcmApp.urls))
-]
-
 # kem
 
 import kem.urls

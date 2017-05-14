@@ -1,10 +1,7 @@
 from .settings import DEBUG
-import urllib
-p=urllib.parse.quote('')
-
 MongoUri = {
     "DEBUG":None,
-    "Production":'mongodb://udic:'+p+'@140.120.13.243:27017'
+    "Production":None
 }
 if DEBUG:
     uri = MongoUri['DEBUG']

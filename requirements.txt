@@ -7,11 +7,9 @@ requests==2.11.1
 simplejson==3.10.0
 
 # made by ourselves
-kcmApp
 PMIofKCM
 kem
 kcem
 DbscanApi
 jiebaWebApi
--e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM
 swingerApp

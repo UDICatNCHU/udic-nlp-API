@@ -36,9 +36,9 @@ API使用方式（下面所寫的是api的URL pattern）
 
 ##### url pattern
 
-1. *`/api/kcm/?keyword=<>&lang=<>&num=<>`*  
+1. *`/kcm/?keyword=<>&lang=<>&num=<>`*  
   此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)
-  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcm/?keyword=中興大學&lang=cht`
+  * 範例 (Example)：`140.120.13.244:10000/kcm/?keyword=中興大學&lang=cht`
 
   ```
   [
@@ -55,9 +55,9 @@ API使用方式（下面所寫的是api的URL pattern）
   ]
   ```
 
-2. *`/api/kem/?keyword=<>&lang=<>&num=<>`*  
+2. *`/kem/?keyword=<>&lang=<>&num=<>`*  
  此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。
-  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kem/?keyword=美國隊長&lang=cht`
+  * 範例 (Example)：`140.120.13.244:10000/kem/?keyword=美國隊長&lang=cht`
 
   ```
   {
@@ -74,9 +74,9 @@ API使用方式（下面所寫的是api的URL pattern）
   }
   ```
 
-3. *`/api/kcem/?keyword=<>&lang=<>&num=<>`*  
+3. *`/kcem/?keyword=<>&lang=<>&num=<>`*  
  此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
-  * 範例 (Example)：`http://api.udic.cs.nchu.edu.tw/api/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
+  * 範例 (Example)：`140.120.13.244:10000/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
 
   ```
   [
@@ -92,6 +92,12 @@ API使用方式（下面所寫的是api的URL pattern）
     ["節目",0.08]
   ]
   ```
+
+## Install  
+1. 安裝各api的函式庫：`pip install -r requirements.txt`
+2. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成，故只有先寫kem）：
+  1. [KEM](https://github.com/UDICatNCHU/KEM)(取得同義字的api)
+3. 設定mongodb的uri：在`udic_nlp_API/settings_database.py`
 
 ## Built With
 
