@@ -95,8 +95,8 @@ API使用方式（下面所寫的是api的URL pattern）
 
 ## Install  
 1. 安裝各api的函式庫：`pip install -r requirements.txt`
-2. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成，故只有先寫kem）：
-  1. [KEM](https://github.com/UDICatNCHU/KEM)(取得同義字的api)
+2. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成，故只有先寫kem）
+  * [KEM](https://github.com/UDICatNCHU/KEM)(取得同義字的api)
 3. 設定mongodb的uri：在`udic_nlp_API/settings_database.py`
 
 ## Built With
