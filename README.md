@@ -1,23 +1,20 @@
 # udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
-# 中興大學普及資料與智慧運算實驗室所開發之字詞關聯查詢web api
-目前我們提供三種模式之字詞關聯查詢
+# 中興大學普及資料與智慧運算實驗室所開發之自然語言web api
+目前我們提供`4`種模式之字詞關聯查詢:
 
-* 頻繁共現關聯 (Co-occurrence Relationship)
-  例如，輸入蔡英文，將會回傳一系列與蔡英文頻繁一起出現之字詞，如總統、台灣、民主進步黨等。
+* 頻繁共現關聯 (Co-occurrence Relationship)：例如，輸入蔡英文，將會回傳一系列與`蔡英文`頻繁一起出現之字詞，如`總統、台灣、民主進步黨`等。
   
 
-* 上下文情境相似關聯 (Similar Context Sharing Relationship)
-  例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。
+* 上下文情境相似關聯 (Similar Context Sharing Relationship)：例如，輸入`周杰倫`，將會回傳一系列相似詞，如`蔡依林、王力宏、張惠妹`等。
 
-* 字詞概念推論 (Hyperonym-Hyponym Relationship)
-  例如，"五月天"是"樂團"，"香蕉"是"水果"，"周杰倫"是"歌手"。
+* 字詞概念推論 (Hyperonym-Hyponym Relationship)：例如，`五月天`是`樂團`，`香蕉`是`水果`，`周杰倫`是`歌手`。
+
+* 句子情緒判斷 (Sentiment Analysis)：例如，`齊家治國平天下，小家給治了！國家更需要妳，加油!擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命尚未成功期盼繼續努力` -> 正面情緒。
 
 目前提供三種語言版本
 * 中文 Chinese
 * 英文 English
-* 泰文 Thai
-
 
 ### API usage and Results
 
@@ -32,7 +29,7 @@ API使用方式（下面所寫的是api的URL pattern）
   * `eng`：English `Still working on it`
   * `thai`：Thai `Still working on it`
 * `num`(optional)：The amount of result you want to get (Default：`10`)
-* `kcm`, `kem`：Used by `kcem`, you can customarily adjust these two parameter which will get different `kcem` performance.
+* `kcm`, `kem`：Used by `kcem`, different combination of kcm and kem may have entirely different output. You can customarily adjust these two parameter as you wish.
 
 ##### url pattern
 
@@ -91,6 +88,23 @@ API使用方式（下面所寫的是api的URL pattern）
     ["主演",0.08],
     ["節目",0.08]
   ]
+  ```
+
+4. *`/swinger/bulkswing`*  
+ 需要對此API做POST：下方有範例code。
+  * 範例 (Example)：`http://140.120.13.244:10000/swinger/bulkswing`
+
+  ```
+  >>> import json, requests
+  >>> requests.post('http://140.120.13.244:10000/swinger/bulkswing', data={'sentence':json.dumps(
+    [
+      '齊家治國平天下，小家給治了！國家更需要妳，加油!',
+      '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
+      ...
+    ]
+  )}).json()
+  
+  # 結果為:{'result': ['pos', 'pos'...]}
   ```
 
 ## Install  

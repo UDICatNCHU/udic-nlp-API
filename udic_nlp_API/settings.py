@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ] + [
     'kcem',
-    'kem'
+    'kem',
+    'swingerApp'
 ]
 
 MIDDLEWARE = [
