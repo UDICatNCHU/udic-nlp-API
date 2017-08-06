@@ -14,16 +14,22 @@ import {
 } from 'semantic-ui-react'
 
 const FixedMenu = () => (
-  <Container>
-        <Menu stackable>
-          <Menu.Item>
-            <img src='/logo.png' />
-          </Menu.Item>
-          <Menu.Item>Features</Menu.Item>
-          <Menu.Item>Testimonials</Menu.Item>
-          <Menu.Item>Sign-in</Menu.Item>
-        </Menu>
-      </Container>
+  <Menu fixed='top' size='large'>
+    <Container>
+      <Menu.Item as='a' active>Home</Menu.Item>
+      <Menu.Item as='a'>Work</Menu.Item>
+      <Menu.Item as='a'>Company</Menu.Item>
+      <Menu.Item as='a'>Careers</Menu.Item>
+      <Menu.Menu position='right'>
+        <Menu.Item className='item'>
+          <Button as='a'>Log in</Button>
+        </Menu.Item>
+        <Menu.Item>
+          <Button as='a' primary>Sign Up</Button>
+        </Menu.Item>
+      </Menu.Menu>
+    </Container>
+  </Menu>
 )
 
 export default class HomepageLayout extends Component {
@@ -32,6 +38,7 @@ export default class HomepageLayout extends Component {
     this.state = {}
     
   }
+
   hideFixedMenu(){
     this.setState({ visible: false })
   }
@@ -39,7 +46,6 @@ export default class HomepageLayout extends Component {
   showFixedMenu(){
     this.setState({ visible: true })
   }
-    
 
   render() {
     const { visible } = this.state
@@ -60,15 +66,17 @@ export default class HomepageLayout extends Component {
             vertical
           >
             <Container>
-                  <Menu stackable>
-                    <Menu.Item>
-                      <img src='/logo.png' />
-                    </Menu.Item>
-                    <Menu.Item>Features</Menu.Item>
-                    <Menu.Item>Testimonials</Menu.Item>
-                    <Menu.Item>Sign-in</Menu.Item>
-                  </Menu>
-                </Container>
+              <Menu inverted pointing secondary size='large'>
+                <Menu.Item as='a' active>Home</Menu.Item>
+                <Menu.Item as='a'>Work</Menu.Item>
+                <Menu.Item as='a'>Company</Menu.Item>
+                <Menu.Item as='a'>Careers</Menu.Item>
+                <Menu.Item position='right'>
+                  <Button as='a' inverted>Log in</Button>
+                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                </Menu.Item>
+              </Menu>
+            </Container>
 
             <Container text>
               <Header

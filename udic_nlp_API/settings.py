@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'kem',
     'PMIofKCM',
     'webpack_loader'
+    'swingerApp'
 ]
 
 MIDDLEWARE = [
