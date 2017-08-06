@@ -1,3 +1,7 @@
+PMIofKCM
+webpack-stats.json
+bundles/
+node_modules
 kcmApp
 kcem
 w2v.tmp
