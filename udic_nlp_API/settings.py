@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'kcem',
     'kem',
     'PMIofKCM',
-    'webpack_loader'
+    'webpack_loader',
     'swingerApp'
 ]
 

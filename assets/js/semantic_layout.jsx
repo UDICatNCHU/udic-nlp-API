@@ -37,6 +37,8 @@ export default class HomepageLayout extends Component {
     super(props);
     this.state = {}
     
+    this.hideFixedMenu = this.hideFixedMenu.bind(this)
+    this.showFixedMenu = this.showFixedMenu.bind(this)
   }
 
   hideFixedMenu(){
@@ -116,7 +118,6 @@ export default class HomepageLayout extends Component {
               <Grid.Column floated='right' width={6}>
                 <Image
                   bordered
-                  rounded
                   size='large'
                   src='/assets/images/wireframe/white-image.png'
                 />
