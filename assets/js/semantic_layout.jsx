@@ -16,10 +16,10 @@ import {
 const FixedMenu = () => (
   <Menu fixed='top' size='large'>
     <Container>
-      <Menu.Item as='a' active>Home</Menu.Item>
-      <Menu.Item as='a'>Work</Menu.Item>
-      <Menu.Item as='a'>Company</Menu.Item>
-      <Menu.Item as='a'>Careers</Menu.Item>
+      <Menu.Item as='a' active>首頁</Menu.Item>
+      <Menu.Item as='a'>API</Menu.Item>
+      <Menu.Item as='a'>延伸服務</Menu.Item>
+      <Menu.Item as='a'>實驗室成員 </Menu.Item>
       <Menu.Menu position='right'>
         <Menu.Item className='item'>
           <Button as='a'>Log in</Button>
@@ -34,18 +34,17 @@ const FixedMenu = () => (
 
 export default class HomepageLayout extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {}
-    
     this.hideFixedMenu = this.hideFixedMenu.bind(this)
     this.showFixedMenu = this.showFixedMenu.bind(this)
   }
 
-  hideFixedMenu(){
+  hideFixedMenu() {
     this.setState({ visible: false })
   }
 
-  showFixedMenu(){
+  showFixedMenu() {
     this.setState({ visible: true })
   }
 
@@ -69,10 +68,10 @@ export default class HomepageLayout extends Component {
           >
             <Container>
               <Menu inverted pointing secondary size='large'>
-                <Menu.Item as='a' active>Home</Menu.Item>
-                <Menu.Item as='a'>Work</Menu.Item>
-                <Menu.Item as='a'>Company</Menu.Item>
-                <Menu.Item as='a'>Careers</Menu.Item>
+                <Menu.Item as='a' active>首頁</Menu.Item>
+                <Menu.Item as='a'>API</Menu.Item>
+                <Menu.Item as='a'>延伸服務</Menu.Item>
+                <Menu.Item as='a'>實驗室成員 </Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted>Log in</Button>
                   <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
@@ -83,18 +82,24 @@ export default class HomepageLayout extends Component {
             <Container text>
               <Header
                 as='h1'
-                content='Imagine-a-Company'
+                content='普及資料與智慧運算'
                 inverted
                 style={{ fontSize: '4em', fontWeight: 'normal', marginBottom: 0, marginTop: '3em' }}
               />
               <Header
+                as='h1'
+                content='實驗室'
+                inverted
+                style={{ fontSize: '4em', fontWeight: 'normal'}}
+              />
+              <Header
                 as='h2'
-                content='Do whatever you want when you want to.'
+                content="if you can't explain it simply, you don't understand it well enough --Albert Einstein"
                 inverted
                 style={{ fontSize: '1.7em', fontWeight: 'normal' }}
               />
               <Button primary size='huge'>
-                Get Started
+                體驗API
                 <Icon name='right arrow' />
               </Button>
             </Container>
@@ -105,21 +110,25 @@ export default class HomepageLayout extends Component {
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
-                <Header as='h3' style={{ fontSize: '2em' }}>We Help Companies and Companions</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>文字探勘的技術</Header>
                 <p style={{ fontSize: '1.33em' }}>
-                  We can give your company superpowers to do things that they never thought possible. Let us delight
-                  your customers and empower your needs... through pure data analytics.
+                不知道要寫什麼，反正就是很屌。
+                不知道要寫什麼，反正就是很屌。
+                  不知道要寫什麼，反正就是很屌。
                 </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>We Make Bananas That Can Dance</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>推薦的技術</Header>
                 <p style={{ fontSize: '1.33em' }}>
-                  Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+                寫了你也看不懂，知道很屌就好
+                寫了你也看不懂，知道很屌就好
+                寫了你也看不懂，知道很屌就好
+                  寫了你也看不懂，知道很屌就好
                 </p>
               </Grid.Column>
               <Grid.Column floated='right' width={6}>
                 <Image
                   bordered
                   size='large'
-                  src='/assets/images/wireframe/white-image.png'
+                  src='https://tctechcrunch2011.files.wordpress.com/2017/03/brain-ai-newsletter.jpg?w=640'
                 />
               </Grid.Column>
             </Grid.Row>
@@ -135,14 +144,17 @@ export default class HomepageLayout extends Component {
           <Grid celled='internally' columns='equal' stackable>
             <Grid.Row textAlign='center'>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"What a Company"</Header>
-                <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+                <Header as='h3' style={{ fontSize: '2em' }}>「XXX功能」讓我打贏選戰。</Header>
+                <p style={{ fontSize: '1.33em' }}>
+                  <Image avatar src='https://image.flaticon.com/icons/svg/189/189061.svg' />
+                  <b>XXX</b>XX競選總部主任
+                </p>
               </Grid.Column>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>"I shouldn't have gone with their competitor."</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>優良團隊值得年年給錢</Header>
                 <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src='/assets/images/avatar/large/nan.jpg' />
-                  <b>Nan</b> Chief Fun Officer Acme Toys
+                  <Image avatar src='https://image.flaticon.com/icons/svg/122/122454.svg' />
+                  <b>王恩慈</b>工研院資深工程師
                 </p>
               </Grid.Column>
             </Grid.Row>
@@ -151,30 +163,17 @@ export default class HomepageLayout extends Component {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
-            <Header as='h3' style={{ fontSize: '2em' }}>Breaking The Grid, Grabs Your Attention</Header>
+            <Header as='h3' style={{ fontSize: '2em' }}>研究動機</Header>
             <p style={{ fontSize: '1.33em' }}>
-              Instead of focusing on content creation and hard work, we have learned how to master the art of doing
-              nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic
-              and worth your attention.
+              我們實驗室主要於資料庫查詢處理與資料探勘技術領域進行研究；各種不同資訊平台及其應用所產生的資料，帶著不同的資料屬性與不同的環境應用需求，也產生多樣化的研究議題，持續地推進資料工程(Data Engineering)研究領域向前發展。而這樣的發展也伴隨資訊技術的更貼近日常生活而有著持續加快的趨勢。
             </p>
             <Button as='a' size='large'>Read More</Button>
 
-            <Divider
-              as='h4'
-              className='header'
-              horizontal
-              style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-            >
-              <a href='#'>Case Studies</a>
-            </Divider>
-
-            <Header as='h3' style={{ fontSize: '2em' }}>Did We Tell You About Our Bananas?</Header>
+            <Header as='h3' style={{ fontSize: '2em' }}>研究目標</Header>
             <p style={{ fontSize: '1.33em' }}>
-              Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really
-              true.
-              It took years of gene splicing and combinatory DNA research, but our bananas can really dance.
+            我們以資料工程技術為出發點考慮各式不一樣應用環境中所產生的資料進行該類型資料之查詢處理與探勘。而就近期研究規劃目標而言，我們規劃三近程研究目標：(1)社群媒體輿情分析(Social Media Analysis)，(2)行動裝置使用者行為探勘(Mobile Data Analysis)，(3)平行與分散式資料處理架構(Parallel and Distributed Data Processing)。而就遠程研究重心而言，我們將仍以資料工程知識為核心，配合於各式現有資通平台上所累積之資料分析與查詢處理經驗，朝向未來可預見之更多樣化之平台與資料類型資料管理應用發展
             </p>
-            <Button as='a' size='large'>I'm Still Quite Interested</Button>
+            <Button as='a' size='large'>Read More</Button>
           </Container>
         </Segment>
 
