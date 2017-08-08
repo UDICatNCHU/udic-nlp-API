@@ -1,5 +1,6 @@
 PMIofKCM
 webpack-stats.json
+webpack-stats*
 bundles/
 node_modules
 kcmApp

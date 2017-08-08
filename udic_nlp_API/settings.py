@@ -133,9 +133,15 @@ STATICFILES_DIRS = (
     #This lets Django's collectstatic store our bundles
     os.path.join(BASE_DIR, 'assets'),
 )
+
 WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'bundles/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    'INDEX': {
+        'BUNDLE_DIR_NAME': 'bundles/index/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-index.json'),
+    },
+    'API': {
+        'BUNDLE_DIR_NAME': 'bundles/api/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-api.json'),
     }
+
 }
