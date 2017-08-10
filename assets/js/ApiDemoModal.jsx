@@ -36,7 +36,7 @@ class InputExampleInput extends React.Component {
 
 	handleKeypress(event){
 	  if(event.key == 'Enter'){
-			$.getJSON( "http://140.120.13.244:10000/kem/?keyword=" + event.target.value + "&lang=cht", (result) => {
+			$.getJSON( this.props.url + event.target.value, (result) => {
 				this.setState({result})
 			})
 	  }
@@ -65,7 +65,7 @@ const ApiDemoModal = (props) => (
 	      <Modal.Description>
 	        <Header>使用說明</Header>
 	        <p>{props.descript}</p>
-	        <InputExampleInput/>
+	        <InputExampleInput url={props.url}/>
 	      </Modal.Description>
 	    </Modal.Content>
 	  </Modal>

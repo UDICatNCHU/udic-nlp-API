@@ -68,14 +68,11 @@ export default class HomepageLayout extends Component {
 
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
-            <ApiDemoModal name='KCM' intro='一個會返回相關字的API' picture='https://image.flaticon.com/icons/svg/204/204358.svg' descript='輸入想查的單字'/>
+            <ApiDemoModal name='KCM' intro='我們實驗室主要於資料庫查詢處理與資料探勘技術領域進行研究；各種不同資訊平台及其應用所產生的資料，帶著不同的資料屬性與不同的環境應用需求，也產生多樣化的研究議題，持續地推進資料工程(Data Engineering)研究領域向前發展。而這樣的發展也伴隨資訊技術的更貼近日常生活而有著持續加快的趨勢。' picture='https://image.flaticon.com/icons/svg/204/204358.svg' descript='xxxxxxxxxxxx' url='http://140.120.13.244:10000/kcm/?lang=cht&keyword='/>
+            <ApiDemoModal name='PMI oriented KCM' intro='我們實驗室主要於資料庫查詢處理與資料探勘技術領域進行研究；各種不同資訊平台及其應用所產生的資料，帶著不同的資料屬性與不同的環境應用需求，也產生多樣化的研究議題，持續地推進資料工程(Data Engineering)研究領域向前發展。而這樣的發展也伴隨資訊技術的更貼近日常生活而有著持續加快的趨勢。' picture='https://image.flaticon.com/icons/svg/429/429293.svg' descript='xxxxxxxxxxxx' url='http://140.120.13.244:10000/pmi/?lang=cht&keyword='/>
+            <ApiDemoModal name='KEM' intro='我們實驗室主要於資料庫查詢處理與資料探勘技術領域進行研究；各種不同資訊平台及其應用所產生的資料，帶著不同的資料屬性與不同的環境應用需求，也產生多樣化的研究議題，持續地推進資料工程(Data Engineering)研究領域向前發展。而這樣的發展也伴隨資訊技術的更貼近日常生活而有著持續加快的趨勢。' picture='https://www.flaticon.com/premium-icon/icons/png/512/284/284842.png' descript='xxxxxxxxxxxx' url='http://140.120.13.244:10000/kem/?lang=cht&keyword='/>
+            <ApiDemoModal name='KCEM' intro='我們實驗室主要於資料庫查詢處理與資料探勘技術領域進行研究；各種不同資訊平台及其應用所產生的資料，帶著不同的資料屬性與不同的環境應用需求，也產生多樣化的研究議題，持續地推進資料工程(Data Engineering)研究領域向前發展。而這樣的發展也伴隨資訊技術的更貼近日常生活而有著持續加快的趨勢。' picture='https://www.flaticon.com/premium-icon/icons/png/512/284/284859.png' descript='xxxxxxxxxxxx' url='http://140.120.13.244:10000/kcem/?lang=cht&num=10&kcm=20&kem=50&keyword='/>
 
-            <Header as='h3' style={{ fontSize: '2em' }}>研究目標</Header>
-            <p style={{ fontSize: '1.33em' }}>
-            我們以資料工程技術為出發點考慮各式不一樣應用環境中所產生的資料進行該類型資料之查詢處理與探勘。而就近期研究規劃目標而言，我們規劃三近程研究目標：(1)社群媒體輿情分析(Social Media Analysis)，(2)行動裝置使用者行為探勘(Mobile Data Analysis)，(3)平行與分散式資料處理架構(Parallel and Distributed Data Processing)。而就遠程研究重心而言，我們將仍以資料工程知識為核心，配合於各式現有資通平台上所累積之資料分析與查詢處理經驗，朝向未來可預見之更多樣化之平台與資料類型資料管理應用發展
-            </p>
-            <Button as='a' size='large'>Read More</Button>
-            <ApiDemoModal name='KCM'/>
           </Container>
         </Segment>
 
