@@ -16,6 +16,7 @@ import {
 } from 'semantic-ui-react'
 import Footer from './footer.jsx'
 import FixedMenu from './FixedMenu.jsx'
+import UpperMenu from './UpperMenu.jsx'
 import MemberIntro from './MemberIntro.jsx'
 
 export default class HomepageLayout extends Component {
@@ -39,7 +40,7 @@ export default class HomepageLayout extends Component {
 
     return (
       <div>
-        { visible ? <FixedMenu /> : null }
+        { visible ? <FixedMenu active='實驗室成員'/> : null }
 
         <Visibility
           onBottomPassed={this.showFixedMenu}
@@ -51,18 +52,7 @@ export default class HomepageLayout extends Component {
             textAlign='center'
             vertical
           >
-            <Container>
-              <Menu inverted pointing secondary size='large'>
-                <a className='item active' href='/' key='1'>首頁</a>
-                <a className='item' href='/api' key='2'>API</a>
-                <Menu.Item as='a'>延伸服務</Menu.Item>
-                <Menu.Item as='a'>實驗室成員 </Menu.Item>
-                <Menu.Item position='right'>
-                  <Button as='a' inverted>Log in</Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
-                </Menu.Item>
-              </Menu>
-            </Container>
+            <UpperMenu active='實驗室成員'/>
           </Segment>
         </Visibility>
 

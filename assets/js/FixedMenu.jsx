@@ -5,13 +5,21 @@ import {
   Menu,
 } from 'semantic-ui-react'
 
-const FixedMenu = () => (
+const FixedMenu = (props) => {
+  let activeTable = {
+    '首頁':'item',
+    'API':'item',
+    '延伸服務':'item',
+    '實驗室成員':'item'
+  }
+  activeTable[props.active] = 'item active'
+  return(
   <Menu fixed='top' size='large'>
     <Container>
-      <a className='item active' href='/' key='1'>首頁</a>
-      <a className='item' href='/api' key='2'>API</a>
-      <a className='item' href='/api' key='3'>延伸服務</a>
-      <a className='item' href='/member' key='4'>實驗室成員</a>
+      <a className={activeTable['首頁']} href='/' >首頁</a>
+      <a className={activeTable['API']} href='/api' >API</a>
+      <a className={activeTable['延伸服務']} href='' >延伸服務</a>
+      <a className={activeTable['實驗室成員']} href='/member' >實驗室成員</a>
       <Menu.Menu position='right'>
         <Menu.Item className='item'>
           <Button as='a'>Log in</Button>
@@ -21,7 +29,7 @@ const FixedMenu = () => (
         </Menu.Item>
       </Menu.Menu>
     </Container>
-  </Menu>
-)
+  </Menu>)
+}
 
 export default FixedMenu;
