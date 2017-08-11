@@ -1,6 +1,6 @@
 import React from 'react'
 import {Table, Menu, Label, Input, Button, Header, Image, Modal, Icon } from 'semantic-ui-react'
-var ReactMarkdown = require('react-markdown');
+var Markdown = require('react-remarkable');
 
 const ResultTable = (props) => {
   return (
@@ -65,7 +65,7 @@ const ApiDemoModal = (props) => (
 	      <Image wrapped size='medium' src={props.picture} />
 	      <Modal.Description>
 	        <Header>使用說明</Header>
-			<ReactMarkdown source={props.descript} />,	        
+			<Markdown source={props.descript} />	        
 	        <InputExampleInput url={props.url}/>
 	      </Modal.Description>
 	    </Modal.Content>
