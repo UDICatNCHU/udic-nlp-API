@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
     url(r'^api/$', TemplateView.as_view(template_name='api.html')),
+    url(r'^member/$', TemplateView.as_view(template_name='member.html')),
 ]
 
 # kem

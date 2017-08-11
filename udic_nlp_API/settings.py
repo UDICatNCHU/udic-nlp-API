@@ -142,6 +142,9 @@ WEBPACK_LOADER = {
     'API': {
         'BUNDLE_DIR_NAME': 'bundles/api/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-api.json'),
+    },
+    'MEMBER': {
+        'BUNDLE_DIR_NAME': 'bundles/member/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-member.json'),
     }
-
 }
