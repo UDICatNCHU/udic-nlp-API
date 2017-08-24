@@ -73,6 +73,14 @@ export default class HomepageLayout extends Component {
 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
 範例 (Example)：<http://40.120.13.244:10000/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100>
 ' url='http://140.120.13.244:10000/kcem/?lang=cht&num=10&kcm=20&kem=50&keyword='/>
+            <ApiDemoModal name='課程搜尋引擎 curso' intro='curso 是西班牙文的課程，諧音為中文的 課搜（課程搜尋）
+因此得名。課搜使用KCM、KEM等文字探勘模型作為輔助工具;當使用者所搜尋的名稱在資料庫查無符合資料時,系統會找出近似於使用者所查詢的關鍵字,再次查詢資料庫,並且回傳最符合的相關課程給使用者' picture='https://image.flaticon.com/icons/svg/428/428982.svg' descript='
+**因為每間學校的課程資料皆不同，目前只提供中興版本作為示範**  
+**如有需要請聯絡我們，或是參閱[source code](https://github.com/stufinite/curso)**  
+**以GNU3.0釋出**  
+此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
+範例 (Example)：<http://127.0.0.1:8000/curso/get/search/?keyword=餅乾&school=NCHU>
+' url='http://127.0.0.1:8000/curso/get/search/?school=NCHU&keyword='/>
 
           </Container>
         </Segment>

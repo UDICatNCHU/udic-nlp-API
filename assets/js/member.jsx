@@ -63,7 +63,7 @@ export default class HomepageLayout extends Component {
                 <MemberIntro name='陳聖軒'  extra='口頭禪:ㄟ思穎' description='泰迪軒軒 專長是打JG， 不管是人還是遊戲都很坦, 實驗室最罩的學長之一' meta='join in 2015 實驗室首席JG' avatar='https://semantic-ui.com/images/avatar/large/chris.jpg'/>
               </Grid.Column>
               <Grid.Column>
-                <MemberIntro name='耀中寶寶'  extra='口頭禪:+365' description='每天8點半都要補充一杯咖啡的耀中寶寶' meta='join in 2011?? 教授就是他拉' avatar='https://semantic-ui.com/images/avatar/large/elliot.jpg'/>
+                <MemberIntro name='耀中寶寶'  extra='口頭禪:+365、這什麼垃圾' description='每天8點半都要補充一杯咖啡的耀中寶寶' meta='join in 2011?? 教授就是他拉' avatar='https://semantic-ui.com/images/avatar/large/elliot.jpg'/>
               </Grid.Column>
               <Grid.Column>
                 <MemberIntro name='黃思穎'  extra='口頭禪:ㄟ聖軒' description='實驗室論文最早寫完的男人, 實驗室最罩的學長之一' meta='join in 2015 實驗室五路皆通' avatar='http://1.semantic-ui.com/images/avatar/large/matt.jpg'/>
@@ -75,7 +75,7 @@ export default class HomepageLayout extends Component {
                 <MemberIntro name='楊尚恩'  extra='口頭禪:噗噗' description=' 叛逃到交大現在又準備要叛逃到國外的叛徒' meta='join in 2015 實驗室首席卷哥' avatar='http://bain.design/wp-content/uploads/2014/09/People-Avatar-Set-Rectangular-07.jpg' />
               </Grid.Column>
               <Grid.Column>
-                <MemberIntro name='Benz'  extra='口頭禪:今尻魯撈（泰文）?' description='到歐洲爽玩了半年，現在正在與論文奮鬥的泰國人，卻沒洗過泰國浴0.0' meta='join in 2015 首席歐洲旅遊達人' avatar='https://semantic-ui.com/images/avatar2/large/mark.png' />
+                <MemberIntro name='Benz'  extra='口頭禪:今尻嚕央（泰文）?' description='到歐洲爽玩了半年，現在正在與論文奮鬥的泰國人，卻沒洗過泰國浴0.0' meta='join in 2015 首席歐洲旅遊達人' avatar='https://semantic-ui.com/images/avatar2/large/mark.png' />
               </Grid.Column>
               <Grid.Column>
                 <MemberIntro name='鄭銘毅'  extra='口頭禪:我不要' description='從煥哥實驗室叛逃到這裡的叛將，接電話時會發出很娘的聲音' meta='join in 2016 首席喇妹王' avatar='https://semantic-ui.com/images/avatar/large/jenny.jpg'/>

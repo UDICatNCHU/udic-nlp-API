@@ -1,5 +1,5 @@
 {
-  "name": "inferno",
+  "name": "udic_nlp_api",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -13,6 +13,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "bower": "^1.8.0",
     "jquery": "^3.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

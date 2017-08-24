@@ -6,6 +6,7 @@ PyPrind==2.9.9
 requests==2.11.1
 simplejson==3.10.0
 django-webpack-loader
+django-bower
 
 # made by ourselves
 PMIofKCM
@@ -14,3 +15,6 @@ kcem
 DbscanApi
 jiebaWebApi
 swingerApp
+cphelper
+curso
+

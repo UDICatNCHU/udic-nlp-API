@@ -63,3 +63,9 @@ import swingerApp.urls
 urlpatterns += [
     url(r'^swinger/', include(swingerApp.urls))
 ]
+
+# curso
+import curso.urls
+urlpatterns += [
+    url(r'^curso/', include(curso.urls))
+]

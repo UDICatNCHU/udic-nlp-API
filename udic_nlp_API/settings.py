@@ -38,11 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ] + [
+    'webpack_loader',
+    'djangobower'
+] + [
     'kcem',
     'kem',
     'PMIofKCM',
-    'webpack_loader',
     'swingerApp'
+]
+
+# 這段是小幫手的api插件
+INSTALLED_APPS += [
+    'timetable', 
+    'cphelper',
+    'curso',
 ]
 
 MIDDLEWARE = [
@@ -129,10 +138,10 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True 
 
 # django-react conf
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     #This lets Django's collectstatic store our bundles
     os.path.join(BASE_DIR, 'assets'),
-)
+]
 
 WEBPACK_LOADER = {
     'INDEX': {
@@ -148,3 +157,19 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats-member.json'),
     }
 }
+
+# django-bower allow django use bower to manage front-end library.
+
+BOWER_COMPONENTS_ROOT = BASE_DIR
+STATICFILES_DIRS.append(BOWER_COMPONENTS_ROOT)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
+
+
+BOWER_INSTALLED_APPS = (
+    'jquery#2.2.4',
+    'semantic#2.2.10',
+)
