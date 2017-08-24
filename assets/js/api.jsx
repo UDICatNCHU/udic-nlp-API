@@ -80,7 +80,7 @@ export default class HomepageLayout extends Component {
 **以GNU3.0釋出**  
 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
 範例 (Example)：<http://127.0.0.1:8000/curso/get/search/?keyword=餅乾&school=NCHU>
-' url='http://127.0.0.1:8000/curso/get/search/?school=NCHU&keyword='/>
+' url='http://127.0.0.1:8000/curso/get/demo/?school=NCHU&keyword='/>
 
           </Container>
         </Segment>
