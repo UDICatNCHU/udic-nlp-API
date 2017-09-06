@@ -81,7 +81,13 @@ export default class HomepageLayout extends Component {
 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
 範例 (Example)：<http://127.0.0.1:8000/curso/get/search/?keyword=餅乾&school=NCHU>
 ' url='http://127.0.0.1:8000/curso/get/demo/?school=NCHU&keyword='/>
-
+            <ApiDemoModal name='情緒分析 swinger' intro='一個自製的判斷中文情緒的函式庫，因為算出來的機率會在0~1之間搖擺，故命名搖擺者，可透過pip安裝 內含已經訓練好的模型' picture='https://raw.githubusercontent.com/UDICatNCHU/Swinger/master/img/seesaw.png' descript='  
+**建議使用pip install swinger安裝**  
+[README](https://github.com/UDICatNCHU/Swinger)
+**/swinger/swing?sentence=<>**  
+此API提供：取得輸入字詞之相關同位詞(Share Similar Context Relationship)。  
+範例 (Example)：<http://140.120.13.244:10000/swinger/swing?sentence=今天真的好高興>
+' url='http://140.120.13.244:10000/swinger/swing?sentence=' oneColumn="1"/>
           </Container>
         </Segment>
 
