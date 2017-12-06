@@ -83,18 +83,16 @@ export default class HomepageLayout extends Component {
           <Grid container stackable verticalAlign='middle'>
             <Grid.Row>
               <Grid.Column width={8}>
-                <Header as='h3' style={{ fontSize: '2em' }}>文字探勘的技術</Header>
+                <Header as='h3' style={{ fontSize: '2em' }}>Research Interesting  /What I would like to do</Header>
                 <p style={{ fontSize: '1.33em' }}>
-                不知道要寫什麼，反正就是很屌。
-                不知道要寫什麼，反正就是很屌。
-                  不知道要寫什麼，反正就是很屌。
-                </p>
-                <Header as='h3' style={{ fontSize: '2em' }}>推薦的技術</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                寫了你也看不懂，知道很屌就好
-                寫了你也看不懂，知道很屌就好
-                寫了你也看不懂，知道很屌就好
-                  寫了你也看不懂，知道很屌就好
+                <ul>
+                  <li>Data Mining</li>
+                  <li>Big Data Management</li>
+                  <li>Crowdsourcing</li>
+                  <li>Social Networks</li>
+                  <li>Mobile Data Management and Application Development</li>
+                  <li>Ubiquitous Computing</li>
+                </ul>
                 </p>
               </Grid.Column>
               <Grid.Column floated='right' width={6}>

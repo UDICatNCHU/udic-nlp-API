@@ -86,8 +86,8 @@ export default class HomepageLayout extends Component {
 [README](https://github.com/UDICatNCHU/Swinger)
 **/swinger/swing?sentence=<>**  
 此API提供：取得輸入字詞之相關同位詞(Share Similar Context Relationship)。  
-範例 (Example)：<http://140.120.13.244:10000/swinger/swing?sentence=今天真的好高興>
-' url='http://140.120.13.244:10000/swinger/swing?sentence=' oneColumn="1"/>
+範例 (Example)：<http://140.120.13.243:10000/swinger/swing?sentence=今天真的好高興>
+' url='http://140.120.13.243:10000/swinger/swing?sentence=' oneColumn="1"/>
           </Container>
         </Segment>
 
