@@ -46,12 +46,6 @@ urlpatterns += [
     url(r'^kcem/', include(kcem.urls))
 ]
 
-# # DbscanApi
-# import DbscanApi.urls
-# urlpatterns += [
-#     url(r'^DbscanApi/',include(DbscanApi.urls, namespace="DbscanApi") ),
-# ]
-
 # jiebaWebApi
 import jiebaWebApi.urls
 urlpatterns += [
@@ -68,4 +62,10 @@ urlpatterns += [
 import curso.urls
 urlpatterns += [
     url(r'^curso/', include(curso.urls))
+]
+
+# TF-IDF
+import tfidf.urls
+urlpatterns += [
+    url(r'^tfidf/', include(tfidf.urls))
 ]
