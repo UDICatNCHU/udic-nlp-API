@@ -12,9 +12,8 @@
 
 * 句子情緒判斷 (Sentiment Analysis)：例如，`齊家治國平天下，小家給治了！國家更需要妳，加油!擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命尚未成功期盼繼續努力` -> 正面情緒。
 
-目前提供三種語言版本
+目前提供1種語言版本
 * 中文 Chinese
-* 英文 English
 
 ### API usage and Results
 
@@ -126,10 +125,14 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 ## Install  
-1. 安裝各api的函式庫：`pip install -r requirements.txt`
-2. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成，故只有先寫kem）
-    * [KEM](https://github.com/UDICatNCHU/KEM)(取得同義字的api)
-3. 設定mongodb的uri：在`udic_nlp_API/settings_database.py`
+1. Use Docker：`docker build -t udicnlpapi .`
+2. RUN Docker：`docker run -itd --name <yourname> udicnlpapi`
+3. Get into docker：`docker exec -it <yourname> bash`
+4. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成）
+    * [KEM](https://github.com/UDICatNCHU/KEM)
+    * [KCEM](https://github.com/UDICatNCHU/kcem)
+    * [TF-IDF](https://github.com/udicatnchu/tf-idf)
+5. 設定mongodb的uri：在`udic_nlp_API/settings_database.py`
 
 ## Built With
 
@@ -150,8 +153,4 @@ For the versions available, see the [tags on this repository](https://github.com
 
 ## License
 
-This project is licensed under the **MIT** License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-感謝KCM的所有作者 Thanks all Contributors of KCM
+This package use `GPL3.0` License.
