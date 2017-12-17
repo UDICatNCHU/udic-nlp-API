@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'kem',
     'PMIofKCM',
     'swingerApp',
-    'tfidf'
+    'udicTfidf'
 ]
 
 # 這段是小幫手的api插件

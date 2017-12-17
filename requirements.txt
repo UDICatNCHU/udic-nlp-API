@@ -12,9 +12,10 @@ django-bower
 PMIofKCM
 kem
 kcem
+udicTfidf
+udicOpenData
 DbscanApi
 jiebaWebApi
 swingerApp
 cphelper
 curso
-

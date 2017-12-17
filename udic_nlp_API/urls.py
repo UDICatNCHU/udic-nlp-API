@@ -65,7 +65,7 @@ urlpatterns += [
 ]
 
 # TF-IDF
-import tfidf.urls
+import udicTfidf.urls
 urlpatterns += [
-    url(r'^tfidf/', include(tfidf.urls))
+    url(r'^tfidf/', include(udicTfidf.urls))
 ]
