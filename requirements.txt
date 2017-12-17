@@ -19,3 +19,5 @@ jiebaWebApi
 swingerApp
 cphelper
 curso
+kcmApp
+-e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM

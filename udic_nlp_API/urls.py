@@ -25,6 +25,13 @@ urlpatterns = [
     url(r'^member/$', TemplateView.as_view(template_name='member.html')),
 ]
 
+# kcm
+
+import kcmApp.urls
+urlpatterns += [
+    url(r'^kcm/', include(kcmApp.urls))
+]
+
 # kem
 
 import kem.urls
