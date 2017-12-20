@@ -174,3 +174,7 @@ BOWER_INSTALLED_APPS = (
     'jquery#2.2.4',
     'semantic#2.2.10',
 )
+
+# shared word2vec variable
+from gensim import models
+W2VMODEL = models.KeyedVectors.load_word2vec_format('./med400.model.bin', binary=True)

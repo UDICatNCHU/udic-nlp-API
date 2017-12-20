@@ -1,6 +1,6 @@
 from .settings import DEBUG
 MongoUri = {
-    "DEBUG":'mongodb://172.17.0.4:27017',
+    "DEBUG":'mongodb://mongo:27017',
     "Production":None
 }
 if DEBUG:
