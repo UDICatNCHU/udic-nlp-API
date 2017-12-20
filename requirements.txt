@@ -9,6 +9,8 @@ django-webpack-loader
 django-bower
 
 # made by ourselves
+-e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM
+kcmApp
 PMIofKCM
 kem
 kcem
@@ -19,5 +21,3 @@ jiebaWebApi
 swingerApp
 cphelper
 curso
-kcmApp
--e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM
