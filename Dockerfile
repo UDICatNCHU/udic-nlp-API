@@ -22,7 +22,7 @@ RUN apt-get -y install libblas-dev liblapack-dev libatlas-base-dev gfortran
 # to install npm
 RUN apt-get -y install curl python-software-properties
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get -y install nodejs sudo
+RUN apt-get -y install nodejs sudo wget
 
 RUN npm install
 RUN npm install -g bower
