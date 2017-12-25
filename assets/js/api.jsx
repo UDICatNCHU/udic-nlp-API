@@ -61,33 +61,33 @@ export default class HomepageLayout extends Component {
             <ApiDemoModal name='KCM' intro='頻繁共現關聯 (Co-occurrence Relationship)：例如，輸入蔡英文，將會回傳一系列與蔡英文頻繁一起出現之字詞，如總統、台灣、民主進步黨等。' picture='https://image.flaticon.com/icons/svg/204/204358.svg' descript='
 **/kcm/?keyword=<>&lang=<>&num=<>**  
 此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)  
-範例(Example)：<http://140.120.13.244:10000/kcm/?keyword=中興大學&lang=cht>' url='http://140.120.13.244:10000/kcm/?lang=cht&keyword='/>
-            <ApiDemoModal name='PMI oriented KCM' intro='?????????' picture='https://image.flaticon.com/icons/svg/429/429293.svg' descript='???????????' url='http://140.120.13.244:10000/pmi/?lang=cht&keyword='/>
+範例(Example)：<http://udiclab.cs.nchu.edu.tw/kcm/?keyword=中興大學&lang=cht>' url='http://udiclab.cs.nchu.edu.tw/kcm/?lang=cht&keyword='/>
+            <ApiDemoModal name='PMI oriented KCM' intro='?????????' picture='https://image.flaticon.com/icons/svg/429/429293.svg' descript='???????????' url='http://udiclab.cs.nchu.edu.tw/pmi/?lang=cht&keyword='/>
             <ApiDemoModal name='KEM' intro='上下文情境相似關聯 (Similar Context Sharing Relationship)：例如，輸入周杰倫，將會回傳一系列相似詞，如蔡依林、王力宏、張惠妹等。' picture='https://www.flaticon.com/premium-icon/icons/png/512/284/284842.png' descript='
 **/kem/?keyword=<>&lang=<>&num=<>**  
 此API提供：取得輸入字詞之相關同位詞(Share Similar Context Relationship)。  
-範例 (Example)：<http://140.120.13.244:10000/kem/?keyword=美國隊長&lang=cht>
-            ' url='http://140.120.13.244:10000/kem/?lang=cht&keyword='/>
+範例 (Example)：<http://udiclab.cs.nchu.edu.tw/kem/?keyword=美國隊長&lang=cht>
+            ' url='http://udiclab.cs.nchu.edu.tw/kem/?lang=cht&keyword='/>
             <ApiDemoModal name='KCEM' intro='字詞概念推論 (Hyperonym-Hyponym Relationship)：例如，五月天是樂團，香蕉是水果，周杰倫是歌手。' picture='https://www.flaticon.com/premium-icon/icons/png/512/284/284859.png' descript='
 **/kcem/?keyword=<>&lang=<>&num=<>**  
 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
-範例 (Example)：<http://40.120.13.244:10000/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100>
-' url='http://140.120.13.244:10000/kcem/?lang=cht&num=10&kcm=20&kem=50&keyword='/>
+範例 (Example)：<http://udiclab.cs.nchu.edu.tw/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100>
+' url='http://udiclab.cs.nchu.edu.tw/kcem/?lang=cht&num=10&kcm=20&kem=50&keyword='/>
             <ApiDemoModal name='課程搜尋引擎 curso' intro='curso 是西班牙文的課程，諧音為中文的 課搜（課程搜尋）
 因此得名。課搜使用KCM、KEM等文字探勘模型作為輔助工具;當使用者所搜尋的名稱在資料庫查無符合資料時,系統會找出近似於使用者所查詢的關鍵字,再次查詢資料庫,並且回傳最符合的相關課程給使用者' picture='https://image.flaticon.com/icons/svg/428/428982.svg' descript='
 **因為每間學校的課程資料皆不同，目前只提供中興版本作為示範**  
 **如有需要請聯絡我們，或是參閱[source code](https://github.com/stufinite/curso)**  
 **以GNU3.0釋出**  
 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。  
-範例 (Example)：<http://140.120.13.243:14444/curso/get/demo/?school=NCHU&keyword=餅乾>
-' url='http://140.120.13.243:14444/curso/get/demo/?school=NCHU&keyword='/>
+範例 (Example)：<http://udiclab.cs.nchu.edu.tw/curso/get/demo/?school=NCHU&keyword=餅乾>
+' url='http://udiclab.cs.nchu.edu.tw/curso/get/demo/?school=NCHU&keyword='/>
             <ApiDemoModal name='情緒分析 swinger' intro='一個自製的判斷中文情緒的函式庫，因為算出來的機率會在0~1之間搖擺，故命名搖擺者，可透過pip安裝 內含已經訓練好的模型' picture='https://raw.githubusercontent.com/UDICatNCHU/Swinger/master/img/seesaw.png' descript='  
 **建議使用pip install swinger安裝**  
 [README](https://github.com/UDICatNCHU/Swinger)
 **/swinger/swing?sentence=<>**  
 此API提供：取得輸入字詞之相關同位詞(Share Similar Context Relationship)。  
-範例 (Example)：<http://140.120.13.243:10000/swinger/swing?sentence=今天真的好高興>
-' url='http://140.120.13.243:10000/swinger/swing?sentence=' oneColumn="1"/>
+範例 (Example)：<http://udiclab.cs.nchu.edu.tw/swinger/swing?sentence=今天真的好高興>
+' url='http://udiclab.cs.nchu.edu.tw/swinger/swing?sentence=' oneColumn="1"/>
           </Container>
         </Segment>
 
