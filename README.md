@@ -125,23 +125,20 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 
 ## Install  
-1. Use Docker：`docker build -t udicnlpapi .`
-2. RUN Docker：`docker run -itd --name <yourname> udicnlpapi`
-3. Get into docker：`docker exec -it <yourname> bash`
-4. 按照各api的readme步驟，開始下載語料並且建立模型（目前readme還未全部完成）
+1. RUN Docker Compose：`docker-comose up -d`
+2. Install Django Project Dependency：Still need to install dependency with bower and build other nlp model e.q. kcm, kem, kcem etc
+    1. `docker exec -it Container_of_Web bash`
+    2. `nohup bash install.sh &`
+3. install.sh裏面的build cmd為optional，不一定要把全部的model都預先建立起來：
+    * [KCM](https://github.com/UDICatNCHU/KCM)
     * [KEM](https://github.com/UDICatNCHU/KEM)
     * [KCEM](https://github.com/UDICatNCHU/kcem)
     * [TF-IDF](https://github.com/udicatnchu/tf-idf)
-5. 設定mongodb的uri：在`udic_nlp_API/settings_database.py`
 
 ## Built With
 
 * Django 1.10.2
 * python3.5
-
-## Versioning
-
-For the versions available, see the [tags on this repository](https://github.com/david30907d/KCM/releases).
 
 ## Contributors
 
