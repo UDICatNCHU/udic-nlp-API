@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'djangobower'
 ] + [
+    'kcmApp',
     'kcem',
     'kem',
     'PMIofKCM',
