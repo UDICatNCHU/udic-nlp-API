@@ -31,4 +31,10 @@ RUN pip3 install -r requirements.txt
 RUN ./node_modules/.bin/webpack --config webpack.config.index.js
 RUN ./node_modules/.bin/webpack --config webpack.config.api.js
 RUN ./node_modules/.bin/webpack --config webpack.config.member.js
+
+# for KCM
 RUN git clone https://github.com/UDICatNCHU/KCM.git; cd KCM; python3 setup.py install
+
+# for kcem
+RUN pip3 install git+git://github.com/yichen0831/opencc-python.git@master#egg=opencc-python
+RUN pip3 install git+git://github.com/attardi/wikiextractor.git@2a5e6aebc030c936c7afd0c349e6826c4d02b871
