@@ -129,6 +129,10 @@ API使用方式（下面所寫的是api的URL pattern）
 2. Install Django Project Dependency：Still need to install dependency with bower and build other nlp model e.q. kcm, kem, kcem etc
     1. `docker exec -it Container_of_Web bash`
     2. `nohup bash install.sh &`
+        * KCM: `not yet`
+        * KEM: `nohup bash install.sh kem &`
+        * KCEM: `not yet`
+        * TF-IDF: `not yet`
 3. install.sh裏面的build cmd為optional，不一定要把全部的model都預先建立起來：
     * [KCM](https://github.com/UDICatNCHU/KCM)
     * [KEM](https://github.com/UDICatNCHU/KEM)
