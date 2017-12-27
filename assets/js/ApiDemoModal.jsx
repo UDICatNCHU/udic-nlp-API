@@ -56,7 +56,7 @@ class InputExampleInput extends React.Component {
 	handleKeypress(event){
 	  if(event.key == 'Enter'){
 			$.getJSON( this.props.url + event.target.value, (result) => {
-				this.setState({result})
+				this.setState({'result': result['value']})
 			})
 	  }
 	}
