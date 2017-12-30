@@ -65,12 +65,6 @@ urlpatterns += [
     url(r'^swinger/', include(swingerApp.urls))
 ]
 
-# curso
-import curso.urls
-urlpatterns += [
-    url(r'^curso/', include(curso.urls))
-]
-
 # TF-IDF
 import udicTfidf.urls
 urlpatterns += [

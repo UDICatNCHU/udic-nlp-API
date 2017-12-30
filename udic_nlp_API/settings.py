@@ -49,12 +49,6 @@ INSTALLED_APPS = [
     'udicTfidf'
 ]
 
-# 這段是小幫手的api插件
-INSTALLED_APPS += [
-    'timetable', 
-    'cphelper',
-    'curso',
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -179,3 +173,5 @@ BOWER_INSTALLED_APPS = (
 # shared word2vec variable
 from gensim import models
 W2VMODEL = models.KeyedVectors.load_word2vec_format('./med400.model.bin', binary=True)
+
+from udicOpenData.dictionary import *

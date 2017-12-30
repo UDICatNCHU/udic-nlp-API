@@ -6,6 +6,10 @@ const ResultTable = (props) => {
   return (
 	<Table celled>
 	  <Table.Header>
+	  	<Table.Row>
+	  	  <Table.HeaderCell>查詢單子:{props.result.key}</Table.HeaderCell>
+	  	  <Table.HeaderCell>similarity:{props.result.similarity}</Table.HeaderCell>
+	  	</Table.Row>
 		<Table.Row>
 		  <Table.HeaderCell>單字</Table.HeaderCell>
 		  <Table.HeaderCell>分數</Table.HeaderCell>
@@ -14,7 +18,7 @@ const ResultTable = (props) => {
 
 	  <Table.Body>
 		{
-			props.result.map((item, idx) => (
+			props.result.value.map((item, idx) => (
 				<Table.Row key={idx}>
 				  <Table.Cell>{item[0]}</Table.Cell>
 				  <Table.Cell>{item[1]}</Table.Cell>
@@ -48,7 +52,7 @@ class InputExampleInput extends React.Component {
 	constructor(props) {
 	  super(props);
 	  this.state = {
-		result:[]
+		result:{"key":"", "value":[], "similarity":""}
 	  }
 	this.handleKeypress = this.handleKeypress.bind(this)
 	}
@@ -56,7 +60,7 @@ class InputExampleInput extends React.Component {
 	handleKeypress(event){
 	  if(event.key == 'Enter'){
 			$.getJSON( this.props.url + event.target.value, (result) => {
-				this.setState({'result': result['value']})
+				this.setState({'result': result})
 			})
 	  }
 	}

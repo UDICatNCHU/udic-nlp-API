@@ -19,5 +19,3 @@ udicOpenData
 DbscanApi
 jiebaWebApi
 swingerApp
-cphelper
-curso
