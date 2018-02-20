@@ -19,3 +19,4 @@ udicOpenData
 DbscanApi
 jiebaWebApi
 swingerApp
+behavior2text

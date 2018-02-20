@@ -70,3 +70,9 @@ import udicTfidf.urls
 urlpatterns += [
     url(r'^tfidf/', include(udicTfidf.urls))
 ]
+
+# behavior2text
+import behavior2text.urls
+urlpatterns += [
+    url(r'^behavior2text/', include(behavior2text.urls))
+]
