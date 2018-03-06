@@ -27,9 +27,9 @@ urlpatterns = [
 
 # kcm
 
-import kcmApp.urls
+import kcm.urls
 urlpatterns += [
-    url(r'^kcm/', include(kcmApp.urls))
+    url(r'^kcm/', include(kcm.urls))
 ]
 
 # kem

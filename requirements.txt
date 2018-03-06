@@ -9,9 +9,8 @@ django-webpack-loader
 django-bower
 
 # made by ourselves
--e git://github.com/UDICatNCHU/KCM.git@master#egg=KCM
-kcmApp
 PMIofKCM
+kcm
 kem
 kcem
 udicTfidf

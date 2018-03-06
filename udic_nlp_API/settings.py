@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'webpack_loader',
     'djangobower'
 ] + [
-    'kcmApp',
-    'kcem',
-    'kem',
+    'kcm',
     'PMIofKCM',
+    'kem',
+    'kcem',
     'swingerApp',
     'udicTfidf',
     'behavior2text'
