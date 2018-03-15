@@ -1,12 +1,15 @@
 Django==1.10.3
 django-cors-headers==1.2.2
 djangoApiDec
-pymongo==3.4.0
 PyPrind==2.9.9
 requests==2.11.1
 simplejson==3.10.0
 django-webpack-loader
 django-bower
+
+# for postgres and MongoDB
+pymongo==3.4.0
+psycopg2-binary
 
 # made by ourselves
 PMIofKCM
