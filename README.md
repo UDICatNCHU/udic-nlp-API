@@ -1,5 +1,3 @@
-`docker build -t udicnlpapi_web . && docker-compose up`
-
 # udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
 # 中興大學普及資料與智慧運算實驗室所開發之自然語言web api
@@ -17,12 +15,27 @@
 目前提供1種語言版本
 * 中文 Chinese
 
-### API usage and Results
+## Install  
+1. RUN Docker Compose：`docker-comose up -d`
+2. Install Django Project Dependency：Still need to install dependency with bower and build other nlp model e.q. kcm, kem, kcem etc
+    1. `docker exec -it Container_of_Web bash`
+    2. `nohup bash install.sh &`
+        * KCM: `not yet`
+        * KEM: `nohup bash install.sh kem &`
+        * KCEM: `not yet`
+        * TF-IDF: `not yet`
+3. install.sh裏面的build cmd為optional，不一定要把全部的model都預先建立起來：
+    * [KCM](https://github.com/UDICatNCHU/KCM)
+    * [KEM](https://github.com/UDICatNCHU/KEM)
+    * [KCEM](https://github.com/UDICatNCHU/kcem)
+    * [TF-IDF](https://github.com/udicatnchu/tf-idf)
+
+## API usage and Results
 
 API使用方式（下面所寫的是api的URL pattern）  
 (Usage of API (pattern written below is URL pattern))：
 
-##### parameter
+#### parameter
 
 * `keyword`：the word you want to query.
 * `lang`：Language you use. below are available language version：
@@ -32,7 +45,7 @@ API使用方式（下面所寫的是api的URL pattern）
 * `num`(optional)：The amount of result you want to get (Default：`10`)
 * `kcm`, `kem`：Used by `kcem`, different combination of kcm and kem may have entirely different output. You can customarily adjust these two parameter as you wish.
 
-##### url pattern
+#### url pattern
 
 1. *`/kcm/?keyword=<>&lang=<>&num=<>`*  
   此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)
@@ -126,20 +139,6 @@ API使用方式（下面所寫的是api的URL pattern）
   # 結果為:{'result': ['pos', 'pos'...]}
   ```
 
-## Install  
-1. RUN Docker Compose：`docker-comose up -d`
-2. Install Django Project Dependency：Still need to install dependency with bower and build other nlp model e.q. kcm, kem, kcem etc
-    1. `docker exec -it Container_of_Web bash`
-    2. `nohup bash install.sh &`
-        * KCM: `not yet`
-        * KEM: `nohup bash install.sh kem &`
-        * KCEM: `not yet`
-        * TF-IDF: `not yet`
-3. install.sh裏面的build cmd為optional，不一定要把全部的model都預先建立起來：
-    * [KCM](https://github.com/UDICatNCHU/KCM)
-    * [KEM](https://github.com/UDICatNCHU/KEM)
-    * [KCEM](https://github.com/UDICatNCHU/kcem)
-    * [TF-IDF](https://github.com/udicatnchu/tf-idf)
 
 ## Built With
 
