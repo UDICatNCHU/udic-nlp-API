@@ -2,6 +2,10 @@
 import os
 import sys
 
+# this one is for python3 to connect MySQL
+import pymysql
+pymysql.install_as_MySQLdb()
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "udic_nlp_API.settings")
     try:
