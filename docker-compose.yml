@@ -4,9 +4,14 @@ services:
   mongo:
     image: mongo
     restart: always
-  postgres:
-    image: postgres
+  mysql:
+    image: mysql
     restart: always
+    expose: 
+          - "3306"
+    environment:
+      - MYSQL_DATABASE=udiclab
+      - MYSQL_ROOT_PASSWORD=udiclab
   web:
     build: .
     command: ["./wait-for-it.sh", "mongo:27017", "--", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -16,5 +21,5 @@ services:
       - "80:8000"
     depends_on:
       - mongo
-      - postgres
+      - mysql
     restart: always

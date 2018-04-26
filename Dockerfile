@@ -19,17 +19,21 @@ ADD . /code/
 RUN apt-get update
 RUN apt-get -y install libblas-dev liblapack-dev libatlas-base-dev gfortran 
 
-RUN apt-get -y install sudo wget opencc
+RUN apt-get -y install sudo wget opencc vim
 
 # to install npm
 RUN apt-get -y install curl python-software-properties
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get -y install nodejs
 
-RUN pip3 install -r requirements.txt
 # for KCM
 RUN git clone https://github.com/UDICatNCHU/KCM.git; cd KCM; python3 setup.py install
 
 # for kcem
 RUN pip3 install git+git://github.com/yichen0831/opencc-python.git@master#egg=opencc-python
 RUN pip3 install git+git://github.com/attardi/wikiextractor.git@2a5e6aebc030c936c7afd0c349e6826c4d02b871
+
+# for MySQL, python3 need to config in specific way...
+RUN  apt install -y libmysqld-dev
+
+RUN pip3 install -r requirements.txt

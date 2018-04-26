@@ -88,11 +88,16 @@ WSGI_APPLICATION = 'udic_nlp_API.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'postgres',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'udiclab',                       # Or path to database file if using sqlite3.
+        'USER': 'root',                       # Not used with sqlite3.
+        'PASSWORD': 'udiclab',               # Not used with sqlite3.
+        'HOST': 'mysql',                           # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306', 
+        'OPTIONS': {
+          'autocommit': True,
+          'charset': 'utf8',
+        },                          # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -128,6 +133,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+# mysql require "USE_TZ = False"
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

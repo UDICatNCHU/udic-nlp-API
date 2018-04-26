@@ -9,7 +9,7 @@ django-bower
 
 # for postgres and MongoDB
 pymongo==3.4.0
-psycopg2-binary
+pymysql
 
 # made by ourselves
 PMIofKCM
