@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ] + [
     'webpack_loader',
-    'djangobower'
+    'djangobower',
+    'ttt'
 ] + [
     'kcm',
     'PMIofKCM',
@@ -85,21 +86,38 @@ WSGI_APPLICATION = 'udic_nlp_API.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'udiclab',                       # Or path to database file if using sqlite3.
-        'USER': 'root',                       # Not used with sqlite3.
-        'PASSWORD': 'udiclab',               # Not used with sqlite3.
-        'HOST': 'mysql',                           # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306', 
+
+        'ENGINE': 'django.db.backends.mysql', #数据库引擎
+
+        'NAME': 'test',                       #数据库名
+
+        'USER': 'root',                       #用户名
+
+        'PASSWORD': '',                   #密码
+
+        'HOST': 'db',                           #数据库主机，默认为localhost
+
+        'PORT': '',                           #数据库端口，MySQL默认为3306 
+
         'OPTIONS': {
           'autocommit': True,
           'charset': 'utf8',
         },                          # Set to empty string for default. Not used with sqlite3.
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'udicnlpapi',
+#         'USER': 'root',
+#         'PASSWORD': 'udicnlpapi',
+#         'HOST': 'db',
+#         'PORT': 3306,
+#     }
+# }
 
 
 # Password validation

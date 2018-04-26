@@ -4,14 +4,17 @@ services:
   mongo:
     image: mongo
     restart: always
-  mysql:
+  db:
     image: mysql
     restart: always
     expose: 
           - "3306"
     environment:
-      - MYSQL_DATABASE=udiclab
-      - MYSQL_ROOT_PASSWORD=udiclab
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: test
+      # MYSQL_USER: root
+      # MYSQL_ROOT_PASSWORD: udicnlpapi
+      # MYSQL_PASSWORD: udicnlpapi
   web:
     build: .
     command: ["./wait-for-it.sh", "mongo:27017", "--", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
@@ -21,5 +24,5 @@ services:
       - "80:8000"
     depends_on:
       - mongo
-      - mysql
+      - db
     restart: always

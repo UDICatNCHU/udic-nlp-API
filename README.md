@@ -1,3 +1,5 @@
+`docker build -t udicnlpapi_web . && docker-compose up`
+
 # udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
 
 # 中興大學普及資料與智慧運算實驗室所開發之自然語言web api
