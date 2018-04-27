@@ -130,6 +130,14 @@ API使用方式（下面所寫的是api的URL pattern）
   # 結果為:{'result': ['pos', 'pos'...]}
   ```
 
+## To Do
+
+1. MySQL use test database, not sure if there's any security issue:
+    * [issue1](https://github.com/UDICatNCHU/udic-nlp-API/blob/master/docker-compose.yml#L14)
+    * [issue2](https://github.com/UDICatNCHU/udic-nlp-API/blob/master/udic_nlp_API/settings.py#L91)
+2. Maybe we need to use React router, i implement router in stupid way:
+    * [issue3](https://github.com/UDICatNCHU/udic-nlp-API/blob/master/udic_nlp_API/settings.py#L152)
+3. After building kcm model, the api of kcm didn't load the newly build data in it. Need to restart docker-compuse manually, maybe it's a MongoDB issue ?
 
 ## Built With
 
