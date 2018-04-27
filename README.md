@@ -17,18 +17,9 @@
 
 ## Install  
 1. RUN Docker Compose：`docker-comose up -d`
-2. Install Django Project Dependency：Still need to install dependency with bower and build other nlp model e.q. kcm, kem, kcem etc
-    1. `docker exec -it Container_of_Web bash`
-    2. `nohup bash install.sh &`
-        * KCM: `not yet`
-        * KEM: `nohup bash install.sh kem &`
-        * KCEM: `not yet`
-        * TF-IDF: `not yet`
-3. install.sh裏面的build cmd為optional，不一定要把全部的model都預先建立起來：
-    * [KCM](https://github.com/UDICatNCHU/KCM)
-    * [KEM](https://github.com/UDICatNCHU/KEM)
-    * [KCEM](https://github.com/UDICatNCHU/kcem)
-    * [TF-IDF](https://github.com/udicatnchu/tf-idf)
+2. Install dependency with bower and build all nlp model e.q. kcm, kem, kcem etc
+    1. `docker exec -it <Container_of_Web> bash`
+    2. `bash install.sh <lang | zh, en, jp>`
 
 ## API usage and Results
 
