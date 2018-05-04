@@ -15,11 +15,14 @@
 目前提供1種語言版本
 * 中文 Chinese
 
-## Install  
-1. RUN Docker Compose：`docker-comose up -d`
-2. Install dependency with bower and build all nlp model e.q. kcm, kem, kcem etc
-    1. `docker exec -it <Container_of_Web> bash`
-    2. `bash install.sh <lang | zh, en, jp>`
+## Install
+
+1. `git clone https://github.com/udicatnchu/udic-nlp-api`
+2. `cd udic-nlp-api`
+3. `docker-comose up -d`
+    * [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
+4. `docker exec -it <Container_of_Web> bash`
+5. `nohup bash -c 'time bash install.sh zh' &`
 
 ## API usage and Results
 
@@ -32,7 +35,7 @@ API使用方式（下面所寫的是api的URL pattern）
 * `lang`：Language you use. below are available language version：
   * `cht`：中文
   * `eng`：English `Still working on it`
-  * `thai`：Thai `Still working on it`
+  * `th`：th `Still working on it`
 * `num`(optional)：The amount of result you want to get (Default：`10`)
 * `kcm`, `kem`：Used by `kcem`, different combination of kcm and kem may have entirely different output. You can customarily adjust these two parameter as you wish.
 
@@ -155,3 +158,38 @@ API使用方式（下面所寫的是api的URL pattern）
 ## License
 
 This package use `GPL3.0` License.
+
+`gzip -d wiki.sql.gz`
+
+`psql -h postgres -U postgres`
+
+## DB part
+
+### show dbs
+`\list`
+
+### show tables
+`\dt`
+
+### To switch databases:
+
+`\connect database_name`
+
+### insert Data using dump s ql
+1. `su - postgres`
+1. `createuser testuser`
+1. `sudo -u postgres createdb <dbname>`
+1. create db
+2. insert:`psql databasename < data_base_dump`
+
+### Mysql
+
+#### imoprt 
+
+1. `apt install -y opencc`
+2. `gunzip *.sql.gz`
+<!-- `opencc -i zhwiki-latest-category.sql -o zhwiki-latest-category.sql.trad` -->
+3. `mysql -uroot -e "create database category"`
+    * `mysql < zhwiki-latest-category.sql`
+4. `mysql -uroot -e "create database categorylinks"`
+    * `mysql categorylinks < zhwiki-latest-categorylinks.sql`
