@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'kcm',
     'PMIofKCM',
     'kem',
-    'kcem',
+    # 'kcem',
     'swingerApp',
     'udicTfidf',
     'behavior2text'

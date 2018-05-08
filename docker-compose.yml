@@ -19,6 +19,7 @@ services:
       - .:/code
     ports:
       - "80:8000"
+      - "9527:22"
     depends_on:
       - mongo
       - db

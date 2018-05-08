@@ -22,7 +22,7 @@ python3 manage.py buildkem --lang ${1} --dimension 400
 # # build model KCEM
 # python3 manage.py buildkcem --lang ${1}
 # build model PMI
-# python3 manage.py buildPMI --lang ${1}
+python3 manage.py buildPMI --lang ${1}
 # build model TF
-# python3 manage.py buildTfidf --lang ${1}
+python3 manage.py buildTfidf --lang ${1}
 exit 0
