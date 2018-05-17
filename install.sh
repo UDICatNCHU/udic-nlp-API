@@ -15,12 +15,13 @@ sudo -u newuser -H sh -c "python3 /code/manage.py bower install"
 # build all text mining model
 # if may take few hours to few days
 echo "build model in language ${1}"；
+
 # build model kcm
 python3 manage.py buildKcm --lang ${1}
 # # build model KEM
 python3 manage.py buildkem --lang ${1} --dimension 400
-# # build model KCEM
-# python3 manage.py buildkcem --lang ${1}
+# build model kcem
+python3 manage.py buildkcem --lang ${1}
 # build model PMI
 python3 manage.py buildPMI --lang ${1}
 # build model TF

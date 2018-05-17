@@ -46,12 +46,12 @@ urlpatterns += [
     url(r'^pmi/', include(PMIofKCM.urls))
 ]
 
-# # KCEM
+# KCEM
 
-# import kcem.urls
-# urlpatterns += [
-#     url(r'^kcem/', include(kcem.urls))
-# ]
+import kcem.urls
+urlpatterns += [
+    url(r'^kcem/', include(kcem.urls))
+]
 
 # swingerApp
 import swingerApp.urls

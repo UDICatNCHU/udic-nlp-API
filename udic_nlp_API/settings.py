@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'kcm',
     'PMIofKCM',
     'kem',
-    # 'kcem',
+    'kcem',
     'swingerApp',
     'udicTfidf',
     'behavior2text'
@@ -85,18 +85,23 @@ WSGI_APPLICATION = 'udic_nlp_API.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', #数据库引擎
-        'NAME': 'test',                       #数据库名
-        'USER': 'root',                       #用户名
-        'PASSWORD': '',                   #密码
-        'HOST': 'db',                           #数据库主机，默认为localhost
-        'PORT': '',                           #数据库端口，MySQL默认为3306 
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'db',
+        'PORT': '',
         'OPTIONS': {
           'autocommit': True,
-          'charset': 'utf8',
-        },                          # Set to empty string for default. Not used with sqlite3.
+          'charset':'utf8mb4'
+        },
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'latin1_swedish_ci',
+        # }
     }
 }
 
