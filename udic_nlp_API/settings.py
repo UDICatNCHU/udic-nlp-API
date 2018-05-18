@@ -100,8 +100,8 @@ DATABASES = {
         },
         'TEST': {
             'CHARSET': 'utf8mb4',
-            'COLLATION': 'latin1_swedish_ci',
-        # }
+            'COLLATION': 'latin1_swedish_ci'
+        }
     }
 }
 

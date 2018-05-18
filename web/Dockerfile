@@ -14,15 +14,15 @@ WORKDIR /code
 ADD . /code/
 
 # to install numpy, scipy
-RUN apt-get update
-RUN apt-get -y install libblas-dev liblapack-dev libatlas-base-dev gfortran 
+RUN apt update
+RUN apt -y install libblas-dev liblapack-dev libatlas-base-dev gfortran 
 
-RUN apt-get -y install sudo wget vim
+RUN apt -y install sudo wget vim
 
 # to install npm
-RUN apt-get -y install curl python-software-properties
+RUN apt -y install curl python-software-properties
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get -y install nodejs
+RUN apt -y install nodejs
 
 # for kcem
 RUN pip3 install git+git://github.com/attardi/wikiextractor.git@2a5e6aebc030c936c7afd0c349e6826c4d02b871
