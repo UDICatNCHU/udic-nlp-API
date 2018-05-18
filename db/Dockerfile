@@ -8,7 +8,7 @@ MAINTAINER davidtnfsh davidtnfsh@gmail.com
 
 ENV LANG=C.UTF-8
 
-RUN apt update
-RUN apt -y install wget python3 pyhton3-pip procps
+RUN apt-get update
+RUN apt-get -y install wget python3 python3-pip procps
 
 RUN pip3 install kcem
