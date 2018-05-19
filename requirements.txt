@@ -24,7 +24,7 @@ jieba==0.39
 jmespath==0.9.3
 json-lines==0.3.1
 kcem
-kcm==1.5
+kcm
 kem==4.1
 kiwisolver==1.0.1
 lxml==4.2.1
