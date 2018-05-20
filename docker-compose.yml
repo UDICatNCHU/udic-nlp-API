@@ -13,7 +13,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_DATABASE: test
   web:
-    build: './web'
+    build: .
     command: ["./wait-for-it.sh", "mongo:27017", "--", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
     volumes:
       - .:/code

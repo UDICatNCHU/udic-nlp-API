@@ -40,6 +40,3 @@ RUN apt-get install -y libmecab-dev mecab mecab-ipadic-utf8
 
 # need to be last
 RUN pip3 install -r requirements.txt
-
-# migrate
-RUN python3 manage.py migrate

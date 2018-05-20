@@ -16,6 +16,9 @@ sudo -u newuser -H sh -c "python3 /code/manage.py bower install"
 # if may take few hours to few days
 echo "build model in language ${1}"；
 
+# migrate
+python3 manage.py migrate
+
 # build model kcm
 python3 manage.py buildKcm --lang ${1}
 # # build model KEM
