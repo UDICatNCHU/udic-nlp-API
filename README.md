@@ -17,7 +17,9 @@
 
 ## Install
 
-1. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
+1. Install Docker and Docker-compose:
+	1. Docker:`curl -fsSL get.docker.com -o get-docker.sh; sh get-docker.sh`
+	2. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
 4. `docker-comose up -d`
