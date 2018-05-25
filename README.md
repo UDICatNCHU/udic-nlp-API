@@ -22,7 +22,7 @@
 	2. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
-4. `docker-comose up -d`
+4. `docker-compose up -d`
 5. `docker exec -it udic-nlp-api_web_1 bash`
 6. `nohup bash -c 'time bash install.sh zh' &`
     * Env: 109G RAM, 32 cores
