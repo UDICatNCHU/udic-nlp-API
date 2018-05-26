@@ -12,19 +12,22 @@
 
 * 句子情緒判斷 (Sentiment Analysis)：例如，`齊家治國平天下，小家給治了！國家更需要妳，加油!擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命尚未成功期盼繼續努力` -> 正面情緒。
 
-目前提供1種語言版本
-* 中文 Chinese
-
 ## Install
+
+* `lang`：Supported Language Parameter
+  * `zh`：中文
+  * `en`：English `Still working on it`
+  * `th`：th `Still working on it`
 
 1. Install Docker and Docker-compose:
 	1. Docker:`curl -fsSL get.docker.com -o get-docker.sh; sh get-docker.sh`
 	2. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
-4. `docker-comose up -d`
+4. `docker-compose up -d`
 5. `docker exec -it udic-nlp-api_web_1 bash`
-6. `nohup bash -c 'time bash install.sh zh' &`
+6. Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
+7. Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
     * Env: 109G RAM, 32 cores
     * Execute time:
     ```
@@ -42,9 +45,9 @@ API使用方式（下面所寫的是api的URL pattern）
 #### parameter
 
 * `keyword`：the word you want to query.
-* `lang`：Language you use. below are available language version：
-  * `cht`：中文
-  * `eng`：English `Still working on it`
+* `lang`：Supported Language Parameter
+  * `zh`：中文
+  * `en`：English `Still working on it`
   * `th`：th `Still working on it`
 * `num`(optional)：The amount of result you want to get (Default：`10`)
 * `kcm`, `kem`：Used by `kcem`, different combination of kcm and kem may have entirely different output. You can customarily adjust these two parameter as you wish.
@@ -53,7 +56,7 @@ API使用方式（下面所寫的是api的URL pattern）
 
 1. *`/kcm/?keyword=<>&lang=<>&num=<>`*  
   此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)
-  * 範例 (Example)：`140.120.13.244:10000/kcm/?keyword=中興大學&lang=cht`
+  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcm/?keyword=中興大學&lang=zh`
 
   ```
   [
@@ -72,7 +75,7 @@ API使用方式（下面所寫的是api的URL pattern）
 
 2. *`/kem/?keyword=<>&lang=<>&num=<>`*  
  此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。
-  * 範例 (Example)：`140.120.13.244:10000/kem/?keyword=美國隊長&lang=cht`
+  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kem/?keyword=美國隊長&lang=zh`
 
   ```
   {
@@ -91,7 +94,7 @@ API使用方式（下面所寫的是api的URL pattern）
 
 3. *`/kcem/?keyword=<>&lang=<>&num=<>`*  
  此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
-  * 範例 (Example)：`140.120.13.244:10000/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
+  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcem/?keyword=周杰倫&lang=zh&num=10&kcm=5&kem=100`
 
   ```
   [
@@ -110,7 +113,7 @@ API使用方式（下面所寫的是api的URL pattern）
 
 4. *`/kcem/?keyword=<>&lang=<>&num=<>`*  
  此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
-  * 範例 (Example)：`140.120.13.244:10000/kcem/?keyword=周杰倫&lang=cht&num=10&kcm=5&kem=100`
+  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcem/?keyword=周杰倫&lang=zh&num=10&kcm=5&kem=100`
 
   ```
   [
@@ -128,11 +131,11 @@ API使用方式（下面所寫的是api的URL pattern）
   ```
 5. *`/swinger/bulkswing`*  
  需要對此API做POST：下方有範例code。
-  * 範例 (Example)：`http://140.120.13.244:10000/swinger/bulkswing`
+  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/swinger/bulkswing`
 
   ```
   >>> import json, requests
-  >>> requests.post('http://140.120.13.244:10000/swinger/bulkswing', data={'sentence':json.dumps(
+  >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
     [
       '齊家治國平天下，小家給治了！國家更需要妳，加油!',
       '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
@@ -168,38 +171,3 @@ API使用方式（下面所寫的是api的URL pattern）
 ## License
 
 This package use `GPL3.0` License.
-
-`gzip -d wiki.sql.gz`
-
-`psql -h postgres -U postgres`
-
-## DB part
-
-### show dbs
-`\list`
-
-### show tables
-`\dt`
-
-### To switch databases:
-
-`\connect database_name`
-
-### insert Data using dump s ql
-1. `su - postgres`
-1. `createuser testuser`
-1. `sudo -u postgres createdb <dbname>`
-1. create db
-2. insert:`psql databasename < data_base_dump`
-
-### Mysql
-
-#### imoprt 
-
-1. `apt install -y opencc`
-2. `gunzip *.sql.gz`
-<!-- `opencc -i zhwiki-latest-category.sql -o zhwiki-latest-category.sql.trad` -->
-3. `mysql -uroot -e "create database category"`
-    * `mysql < zhwiki-latest-category.sql`
-4. `mysql -uroot -e "create database categorylinks"`
-    * `mysql categorylinks < zhwiki-latest-categorylinks.sql`
