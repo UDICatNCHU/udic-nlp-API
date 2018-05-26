@@ -30,7 +30,7 @@
 7. Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
     * Env: 109G RAM, 32 cores
     * Execute time:
-    ```
+    ```bash
       real  1628m19.225s
       user  11524m41.396s
       sys 362m18.024s
@@ -38,9 +38,6 @@
 
 
 ## API usage and Results
-
-API使用方式（下面所寫的是api的URL pattern）  
-(Usage of API (pattern written below is URL pattern))：
 
 #### parameter
 
@@ -54,97 +51,26 @@ API使用方式（下面所寫的是api的URL pattern）
 
 #### url pattern
 
-1. *`/kcm/?keyword=<>&lang=<>&num=<>`*  
-  此API提供：取得輸入字詞之頻繁共現詞 (Co-Occurrence Relationship)
-  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcm/?keyword=中興大學&lang=zh`
+1. Keyword Co-Occurence API(Co-Occurrence Relationship):
+    * [api](https://github.com/UDICatNCHU/new_kcm#api)
 
-  ```
-  [
-    ["大學",58],
-    ["臺灣",52],
-    ["畢業",36],
-    ["教授",33],
-    ["法商學院",22],
-    ["學生",19],
-    ["研究所",19],
-    ["農學院",19],
-    ["臺灣省立",16],
-    ["國立中興大學",15]
-  ]
-  ```
+2. Pointwise mutual information API:
+    * [api](https://github.com/udicatnchu/pmi-of-kcm#api)
 
-2. *`/kem/?keyword=<>&lang=<>&num=<>`*  
- 此API提供：取得輸入字詞之相關`同位詞`(Share Similar Context Relationship)。
-  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kem/?keyword=美國隊長&lang=zh`
+3. Word2Vec Online API:
+    * [api](https://github.com/UDICatNCHU/kem/#api)
 
-  ```
-  {
-    "X戰警": "0.6915161609649658",
-    "俠": "0.6872922778129578",
-    "復仇者": "0.6902425289154053",
-    "復仇者聯盟": "0.7779505252838135",
-    "神奇四俠": "0.7140904664993286",
-    "蜘蛛人": "0.7551226615905762",
-    "蜘蛛俠": "0.7653720378875732",
-    "蝙蝠俠": "0.7000312805175781",
-    "蟻人": "0.7080279588699341",
-    "變形金剛": "0.7029522657394409"
-  }
-  ```
+4. Hyperonym-Hyponym Relationship API:
+    * [api](https://github.com/UDICatNCHU/kcem/#api)
 
-3. *`/kcem/?keyword=<>&lang=<>&num=<>`*  
- 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
-  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcem/?keyword=周杰倫&lang=zh&num=10&kcm=5&kem=100`
+5. TF-IDF API:
+    * [api](https://github.com/udicatnchu/tf-idf#api)
 
-  ```
-  [
-    ["歌手","0.5800000000000003"],
-    ["專輯","0.5500000000000003"],
-    ["香港","0.3900000000000002"],
-    ["歌曲","0.34000000000000014"],
-    ["臺灣","0.34000000000000014"],
-    ["演唱會",0.17],
-    ["音樂",0.17],
-    ["電影",0.15],
-    ["主演",0.08],
-    ["節目",0.08]
-  ]
-  ```
+6. 中文情緒分類器API:
+    * [api](https://github.com/UDICatNCHU/swingerapp#api)
 
-4. *`/kcem/?keyword=<>&lang=<>&num=<>`*  
- 此API提供：字詞(Term)與概念(Concept)之間”is-a”對應關係(Hyperonym-Hyponym Relationship)推論。
-  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/kcem/?keyword=周杰倫&lang=zh&num=10&kcm=5&kem=100`
-
-  ```
-  [
-    ["歌手","0.5800000000000003"],
-    ["專輯","0.5500000000000003"],
-    ["香港","0.3900000000000002"],
-    ["歌曲","0.34000000000000014"],
-    ["臺灣","0.34000000000000014"],
-    ["演唱會",0.17],
-    ["音樂",0.17],
-    ["電影",0.15],
-    ["主演",0.08],
-    ["節目",0.08]
-  ]
-  ```
-5. *`/swinger/bulkswing`*  
- 需要對此API做POST：下方有範例code。
-  * 範例 (Example)：`http://udiclab.cs.nchu.edu.tw/swinger/bulkswing`
-
-  ```
-  >>> import json, requests
-  >>> requests.post('http://udiclab.cs.nchu.edu.tw/swinger/bulkswing', data={'sentence':json.dumps(
-    [
-      '齊家治國平天下，小家給治了！國家更需要妳，加油!',
-      '擇善固執莫在意全家滿意，至於她家謾駡攻許隨她去(正常情緒紓緩)，革命未成功期盼繼續努力'
-      ...
-    ]
-  )}).json()
-  
-  # 結果為:{'result': ['pos', 'pos'...]}
-  ```
+7. Behavior 2 Text API:
+    * coming soon
 
 ## To Do
 
