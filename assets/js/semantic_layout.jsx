@@ -111,27 +111,6 @@ export default class HomepageLayout extends Component {
           </Grid>
         </Segment>
 
-        <Segment style={{ padding: '0em' }} vertical>
-          <Grid celled='internally' columns='equal' stackable>
-            <Grid.Row textAlign='center'>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>「XXX功能」讓我打贏選戰。</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src='https://image.flaticon.com/icons/svg/189/189061.svg' />
-                  <b>XXX</b>XX競選總部主任
-                </p>
-              </Grid.Column>
-              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                <Header as='h3' style={{ fontSize: '2em' }}>優良團隊值得年年給錢</Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  <Image avatar src='https://image.flaticon.com/icons/svg/122/122454.svg' />
-                  <b>王恩慈</b>工研院資深工程師
-                </p>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        </Segment>
-
         <Segment style={{ padding: '8em 0em' }} vertical>
           <Container text>
             <Header as='h3' style={{ fontSize: '2em' }}>研究動機</Header>
