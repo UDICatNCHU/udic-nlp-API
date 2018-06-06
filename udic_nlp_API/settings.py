@@ -185,4 +185,6 @@ BOWER_INSTALLED_APPS = (
     'semantic#2.2.10',
 )
 
-from udicOpenData.dictionary import *
+# MySQL connection will throw (0, '')
+# set None would fix it
+CONN_MAX_AGE = None

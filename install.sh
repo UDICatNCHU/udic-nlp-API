@@ -20,13 +20,20 @@ echo "build model in language ${1}"；
 python3 manage.py migrate
 
 # build model kcm
-python3 manage.py buildKcm --lang ${1}
+python3 manage.py buildKcm --lang ${1} --cpus 20
 # # build model KEM
 python3 manage.py buildkem --lang ${1} --dimension 400
 # build model kcem
-python3 manage.py buildkcem --lang ${1}
+python3 manage.py buildkcem --lang ${1} --cpus 6
 # build model PMI
 python3 manage.py buildPMI --lang ${1}
 # build model TF
 python3 manage.py buildTfidf --lang ${1}
+echo '-----------------------------------'
+echo "all api is available now"
+echo "only some duplicate key of kcem need to be merged"
+echo "this process would take some times, maybe few days to few weeks"
+echo "but it's totally ok to skip this process"
+echo '-----------------------------------'
+python3 manage.py mergeKcem --lang ${1}
 exit 0
