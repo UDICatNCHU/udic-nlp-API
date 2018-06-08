@@ -18,8 +18,7 @@ services:
     volumes:
       - .:/code
     ports:
-      - "80:8000"
-      - "9527:22"
+      - "${OUTPUT_PORT}:8000"
     depends_on:
       - mongo
       - db

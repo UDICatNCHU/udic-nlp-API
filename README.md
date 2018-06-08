@@ -24,17 +24,19 @@
 	2. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
-4. `docker-compose up -d`
-5. `docker exec -it udic-nlp-api_web_1 bash`
-6. Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
-7. Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
-    * Env: 109G RAM, 32 cores
-    * Execute time:
-    ```bash
-      real  1628m19.225s
-      user  11524m41.396s
-      sys 362m18.024s
-    ```
+4. Need to specify which port to be exported for api server:`export OUTPUT_PORT=81`
+5. `docker-compose up -d`
+6. `docker exec -it udic-nlp-api_web_1 bash`
+7. These two commands can be executed simultaneously:
+    * Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
+    * Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
+        * Env: 109G RAM, 32 cores
+        * Execute time:
+        ```bash
+          real  1628m19.225s
+          user  11524m41.396s
+          sys 362m18.024s
+        ```
 
 
 ## API usage and Results
