@@ -3,7 +3,7 @@
 # Author: davidtnfsh
 # Command format: Instruction [arguments / command] ..
 
-FROM mysql:8.0.11
+FROM mysql:5.7.22
 MAINTAINER davidtnfsh davidtnfsh@gmail.com
 
 ENV LANG=C.UTF-8
