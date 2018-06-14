@@ -21,14 +21,22 @@ python3 manage.py migrate
 
 # build model kcm
 python3 manage.py buildKcm --lang ${1} --cpus 20
-# # build model KEM
+
+# build model KEM
 python3 manage.py buildkem --lang ${1} --dimension 400
+
 # build model kcem
 python3 manage.py buildkcem --lang ${1} --cpus 6
+
+# After building an ontology consisting of isA relation
+# we can use it to build a enhanced word2vec with hypernym
+python3 manage.py buildkem --lang ${1} --dimension 400 --cpus 6 --ontology True
 # build model PMI
 python3 manage.py buildPMI --lang ${1}
+
 # build model TF
 python3 manage.py buildTfidf --lang ${1}
+
 echo '-----------------------------------'
 echo "all api is available now"
 echo "only some duplicate key of kcem need to be merged"

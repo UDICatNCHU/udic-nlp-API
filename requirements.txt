@@ -15,7 +15,7 @@ pymysql
 PMIofKCM==2.2
 kcem==6.7
 kcm==1.8
-kem==4.1
+kem==4.3
 udicOpenData==0.9
 udicTfidf==1.3
 swingerApp==1.3
