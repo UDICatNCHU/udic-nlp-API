@@ -24,7 +24,7 @@
 	2. [How to install docker-compose](https://docs.docker.com/compose/install/#install-compose)
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
-4. Need to specify which port to be exported for api server:`export OUTPUT_PORT=81`
+4. Need to specify which port to be exported for api server:`export OUTPUT_PORT=80`
 5. `docker-compose up -d`
 6. `docker exec -it udic-nlp-api_web_1 bash`
 7. These two commands can be executed simultaneously:
