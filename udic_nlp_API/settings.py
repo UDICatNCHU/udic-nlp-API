@@ -101,7 +101,8 @@ DATABASES = {
         'TEST': {
             'CHARSET': 'utf8mb4',
             'COLLATION': 'latin1_swedish_ci'
-        }
+        },
+        'CONN_MAX_AGE': None # MySQL connection will throw (0, ''), set None would fix it
     }
 }
 
@@ -184,7 +185,3 @@ BOWER_INSTALLED_APPS = (
     'jquery#2.2.4',
     'semantic#2.2.10',
 )
-
-# MySQL connection will throw (0, '')
-# set None would fix it
-CONN_MAX_AGE = None
