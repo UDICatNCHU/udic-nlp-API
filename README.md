@@ -25,10 +25,15 @@
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
 4. Need to specify which port to be exported for api server:`export OUTPUT_PORT=80`
-5. `docker-compose up -d`
-6. `docker exec -it udic-nlp-api_web_1 bash`
-7. These two commands can be executed simultaneously:
+5. `docker-compose up -d`:
+    This command will create three containers
+    1. Django (named as api_web_<num>)
+    2. MongoDB (named as api_mongo_<num>)
+    3. MySQL (named as api_db_<num>)
+6. `docker exec -it udic-nlp-api_db_1 bash`:Enter into the MySQL container
     * Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
+    * This command can be executed simultaneously with `command 7`
+7. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
     * Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
         * Env: 109G RAM, 32 cores
         * Execute time:
@@ -37,7 +42,6 @@
           user  11524m41.396s
           sys 362m18.024s
         ```
-
 
 ## API usage and Results
 
