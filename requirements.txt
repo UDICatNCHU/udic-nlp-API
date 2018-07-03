@@ -13,7 +13,7 @@ pymysql
 
 # made by ourselves
 PMIofKCM==2.2
-kcem==6.7
+kcem==7.0
 kcm==1.8
 kem==4.3
 udicOpenData==0.9
