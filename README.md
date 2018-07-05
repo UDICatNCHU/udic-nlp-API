@@ -30,18 +30,20 @@
     1. Django (named as api_web_<num>)
     2. MongoDB (named as api_mongo_<num>)
     3. MySQL (named as api_db_<num>)
-6. `docker exec -it udic-nlp-api_db_1 bash`:Enter into the MySQL container
+6. `docker exec -it udicnlpapi_db_1 bash`:Enter into the MySQL container
     * Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
     * This command can be executed simultaneously with `command 7`
-7. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
+7. `docker exec -it udicnlpapi_web_1 bash`:enter into the Django container
     * Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
         * Env: 109G RAM, 32 cores
         * Execute time:
         ```bash
-          real  1628m19.225s
-          user  11524m41.396s
-          sys 362m18.024s
+          real  2352m46.045s
+          user  12311m52.132s
+          sys   533m10.096s
         ```
+8. After finishing the building process, you need to restart the Django container (udicnlpapi_web_1):`docker restart udicnlpapi_web_1`
+9. That's it !
 
 ## API usage and Results
 
