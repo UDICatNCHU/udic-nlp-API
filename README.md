@@ -42,7 +42,7 @@
           user  12311m52.132s
           sys   533m10.096s
         ```
-8. After finishing the building process, you need to restart the Django container (udicnlpapi_web_1):`docker restart udicnlpapi_web_1`
+8. After finishing the building process, you need to restart the Django container (udicnlpapi_web_1):`docker restart udic-nlp-api_web_1`
 9. That's it !
 
 ## API usage and Results
