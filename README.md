@@ -33,7 +33,19 @@
 6. `docker exec -it udic-nlp-api_db_1 bash`:Enter into the MySQL container
     * Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
     * This command can be executed simultaneously with `command 7`
-7. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
+7. `docker exec -it udic-nlp-api_mongo_1 bash`:Enter into the Mongo container and limit memory usage:
+    * `vim /etc/mongod.conf.orig` and add `wiredTiger` part to <num> GB. (I set 4 GB in my rig)
+      ```
+      # Where and how to store data.
+      storage:
+        dbPath: /var/lib/mongodb
+        journal:
+          enabled: true
+        wiredTiger:
+          engineConfig:
+            cacheSizeGB: 4
+      ```
+8. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
     * Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
         * Env: 109G RAM, 32 cores
         * Execute time:
