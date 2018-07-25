@@ -4,6 +4,12 @@ services:
   mongo:
     image: mongo
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 20G
+        reservations:
+          memory: 5G
   db:
     build: './db'
     restart: always
@@ -23,3 +29,9 @@ services:
       - mongo
       - db
     restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 20G
+        reservations:
+          memory: 5G

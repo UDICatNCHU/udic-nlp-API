@@ -25,27 +25,17 @@
 2. `git clone https://github.com/udicatnchu/udic-nlp-api`
 3. `cd udic-nlp-api`
 4. Need to specify which port to be exported for api server:`export OUTPUT_PORT=80`
-5. `docker-compose up -d`:
+5. `docker-compose --compatibility up -d`:
     This command will create three containers
-    1. Django (named as api_web_<num>)
-    2. MongoDB (named as api_mongo_<num>)
-    3. MySQL (named as api_db_<num>)
+
+    (check [Config](#config) to know further detail)
+    1. Django (named as udic-nlp-api_web_1)
+    2. MongoDB (named as udic-nlp-api_mongo_1)
+    3. MySQL (named as udic-nlp-api_db_1)
 6. `docker exec -it udic-nlp-api_db_1 bash`:Enter into the MySQL container
     * Insert WikiDump into MySQL:`nohup download_wikisql.sh <lang> &`
     * This command can be executed simultaneously with `command 7`
-7. `docker exec -it udic-nlp-api_mongo_1 bash`:Enter into the Mongo container and limit memory usage:
-    * `vim /etc/mongod.conf.orig` and add `wiredTiger` part to <num> GB. (I set 4 GB in my rig)
-      ```
-      # Where and how to store data.
-      storage:
-        dbPath: /var/lib/mongodb
-        journal:
-          enabled: true
-        wiredTiger:
-          engineConfig:
-            cacheSizeGB: 4
-      ```
-8. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
+7. `docker exec -it udic-nlp-api_web_1 bash`:enter into the Django container
     * Build Model:`nohup bash -c 'time bash install.sh <lang>' &`
         * Env: 109G RAM, 32 cores
         * Execute time:
@@ -91,6 +81,14 @@
 
 7. Behavior 2 Text API:
     * coming soon
+
+## Config
+
+Use [Docker-Compose Resources](https://docs.docker.com/compose/compose-file/#resources) to Configures resource constraints.
+
+Also, please check these two [issue1](https://github.com/docker/compose/issues/4513), [issue2](https://github.com/docker/compose/pull/5684).
+
+It explain why we should add `--compatibility` flag. To re-allocate resources, please check [docker-compose.yml](docker-compose.yml)
 
 ## To Do
 

@@ -17,6 +17,6 @@ kcem==7.0
 kcm==1.8
 kem==4.4
 udicOpenData==0.9
-udicTfidf==1.3
+udicTfidf==1.6
 swingerApp==1.3
 behavior2text==1.0
