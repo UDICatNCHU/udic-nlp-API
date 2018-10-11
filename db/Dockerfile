@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libxslt1-dev \
 		zlib1g-dev \
 		python-pip \
+	&& pip3 install --no-cache-dir setuptools \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* /tmp/*
 RUN pip3 install kcem
