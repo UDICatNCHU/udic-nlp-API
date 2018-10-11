@@ -7,4 +7,4 @@ python:
 install:
   - export OUTPUT_PORT=80
 script:
-  - docker-compose --compatibility up -d
+  - docker-compose up -d
