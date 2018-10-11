@@ -3,11 +3,7 @@ language: python
 # add this line.
 # sudo: required
 python:
-  - 3.2
-  - 3.3 
-  - 3.4
   - 3.5
-install:
-  - make install
 script:
-  - make test
+  - export OUTPUT_PORT=80
+  - docker-compose --compatibility up -d
