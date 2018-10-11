@@ -1,4 +1,4 @@
-Django==1.10.3
+Django==1.11.15
 django-cors-headers==1.2.2
 djangoApiDec
 PyPrind==2.9.9
@@ -13,8 +13,8 @@ pymysql
 
 # made by ourselves
 PMIofKCM==2.2
-kcem==7.0
-kcm==1.8
+kcem==7.1
+kcm==2.0
 kem==4.4
 udicOpenData==0.9
 udicTfidf==1.6
