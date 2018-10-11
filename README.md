@@ -1,4 +1,4 @@
-# udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/PTT_KCM_API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/PTT_KCM_API)
+# udic nlp API[![Build Status](https://travis-ci.org/UDICatNCHU/udic-nlp-API.svg?branch=master)](https://travis-ci.org/UDICatNCHU/udic-nlp-API)
 
 # 中興大學普及資料與智慧運算實驗室所開發之自然語言web api
 目前我們提供`4`種模式之字詞關聯查詢:
